@@ -1,11 +1,455 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import LandingLayout from '../layouts/LandingLayout.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<LandingLayout title="Perú Rocket Importaciones - Monitores Extensores Portátiles">
+	<!-- Navegación Sticky -->
+	<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex justify-between items-center h-20 md:h-24">
+				<a href="#inicio" class="flex items-center h-full">
+					<img 
+						src="/logo_perurocket.png" 
+						alt="Perú Rocket Importaciones" 
+						class="h-14 md:h-20 w-auto object-contain"
+						loading="eager"
+					/>
+				</a>
+				<div class="hidden md:flex space-x-8 text-sm">
+					<a href="#inicio" class="text-gray-600 hover:text-accent transition-colors duration-300">Inicio</a>
+					<a href="#nosotros" class="text-gray-600 hover:text-accent transition-colors duration-300">Nosotros</a>
+					<a href="#productos" class="text-gray-600 hover:text-accent transition-colors duration-300">Productos</a>
+					<a href="#contacto" class="text-gray-600 hover:text-accent transition-colors duration-300">Contacto</a>
+				</div>
+				<button class="md:hidden text-gray-600" id="mobile-menu-btn">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="md:hidden hidden bg-white border-t border-gray-100" id="mobile-menu">
+			<div class="px-4 pt-2 pb-4 space-y-2">
+				<a href="#inicio" class="block py-2 text-gray-600 hover:text-accent transition-colors">Inicio</a>
+				<a href="#nosotros" class="block py-2 text-gray-600 hover:text-accent transition-colors">Nosotros</a>
+				<a href="#productos" class="block py-2 text-gray-600 hover:text-accent transition-colors">Productos</a>
+				<a href="#contacto" class="block py-2 text-gray-600 hover:text-accent transition-colors">Contacto</a>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Hero Section -->
+	<section id="inicio" class="pt-24 md:pt-32 min-h-[85vh] flex items-center bg-gradient-to-br from-white via-blue-50/30 to-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+			<div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+				<!-- Columna Izquierda -->
+				<div class="animate-fade-in-up text-center md:text-left">
+					<div class="mb-8 flex justify-center md:justify-start">
+						<img 
+							src="/logo_perurocket.png" 
+							alt="Perú Rocket Importaciones" 
+							class="h-32 md:h-40 w-auto object-contain"
+							loading="eager"
+						/>
+					</div>
+					<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
+						Transforma tu <span class="text-accent">productividad</span> con tecnología de vanguardia
+					</h1>
+					<p class="text-lg md:text-xl text-secondary leading-relaxed mb-8 max-w-2xl mx-auto md:mx-0">
+						Especialistas en importación de monitores extensores portátiles de alta calidad. 
+						Multiplica tu espacio de trabajo con un solo cable.
+					</p>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+						<a href="#productos" class="inline-block bg-accent text-white px-8 py-3.5 rounded-md font-medium hover:bg-accent-hover transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
+							Ver productos
+						</a>
+						<a href="#nosotros" class="inline-block bg-white text-primary border-2 border-gray-200 px-8 py-3.5 rounded-md font-medium hover:border-accent hover:text-accent transition-all duration-300 text-center">
+							Conocer más
+						</a>
+					</div>
+				</div>
+				<!-- Columna Derecha -->
+				<div class="animate-scale-in">
+					<div class="grid grid-cols-2 gap-4">
+						<div class="space-y-4">
+							<img 
+								src="/S900/S900 (7).jpg" 
+								alt="Extensor S900 - Doble pantalla" 
+								class="w-full rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+								loading="lazy"
+							/>
+							<img 
+								src="/S788/S788 mail pictures/S788主图 (1).jpg" 
+								alt="Extensor S788 - Triple pantalla" 
+								class="w-full rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+								loading="lazy"
+							/>
+						</div>
+						<div class="space-y-4 pt-8">
+							<img 
+								src="/S900/S900详情页 (1).jpg" 
+								alt="Detalle monitor S900" 
+								class="w-full rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+								loading="lazy"
+							/>
+							<img 
+								src="/S788/S788 mail pictures/S788主图 (3).jpg" 
+								alt="Detalle monitor S788" 
+								class="w-full rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+								loading="lazy"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección Nosotros -->
+	<section id="nosotros" class="py-20 md:py-28 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary text-center mb-8 md:mb-12">
+					Sobre <span class="text-accent">Perú Rocket Importaciones</span>
+				</h2>
+				<div class="space-y-6 text-lg text-secondary leading-relaxed scroll-fade-in">
+					<p>
+						En <strong class="text-primary">Perú Rocket Importaciones</strong>, nos especializamos en 
+						importar y distribuir tecnología de última generación para mejorar la productividad y 
+						experiencia de trabajo de nuestros clientes.
+					</p>
+					<p>
+						Somos líderes en la importación de monitores extensores portátiles, productos diseñados 
+						para profesionales que necesitan maximizar su espacio de trabajo sin comprometer la 
+						portabilidad y calidad.
+					</p>
+					<p>
+						Nuestro compromiso es ofrecer productos de <strong class="text-primary">alta calidad</strong>, 
+						con garantías completas y un servicio al cliente excepcional. Trabajamos directamente con 
+						fabricantes certificados para garantizar que cada producto cumpla con los más altos estándares 
+						de calidad y rendimiento.
+					</p>
+				</div>
+
+				<!-- Valores -->
+				<div class="grid md:grid-cols-3 gap-8 mt-16 md:mt-20">
+					<div class="text-center scroll-fade-in">
+						<div class="w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
+							<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-primary mb-2">Calidad Garantizada</h3>
+						<p class="text-sm text-secondary">
+							Productos certificados y probados para asegurar el mejor rendimiento
+						</p>
+					</div>
+
+					<div class="text-center scroll-fade-in">
+						<div class="w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
+							<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-primary mb-2">Entrega Rápida</h3>
+						<p class="text-sm text-secondary">
+							Enviamos a todo el Perú con tiempos de entrega optimizados
+						</p>
+					</div>
+
+					<div class="text-center scroll-fade-in">
+						<div class="w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
+							<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-primary mb-2">Soporte Premium</h3>
+						<p class="text-sm text-secondary">
+							Atención personalizada antes, durante y después de tu compra
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección Productos -->
+	<section id="productos" class="py-20 md:py-28 bg-gradient-to-br from-gray-50 to-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-12 md:mb-16">
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+					Nuestros <span class="text-accent">Productos</span>
+				</h2>
+				<p class="text-lg text-secondary max-w-2xl mx-auto">
+					Descubre nuestra línea de monitores extensores portátiles diseñados para maximizar tu productividad
+				</p>
+			</div>
+
+			<div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+				<!-- Producto 1: S900 - Extensor 2 Monitores -->
+				<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden scroll-fade-in group">
+					<a href="/extensor-2-monitores-s900" class="block">
+						<div class="relative overflow-hidden">
+							<img 
+								src="/S900/S900 (7).jpg" 
+								alt="Extensor Dual Screen S900" 
+								class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+								loading="lazy"
+							/>
+							<div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+								Más vendido
+							</div>
+						</div>
+						<div class="p-6 md:p-8">
+							<h3 class="text-2xl md:text-3xl font-bold text-primary mb-3">
+								Extensor Dual Screen S900
+							</h3>
+							<p class="text-secondary mb-4">
+								Convierte tu laptop en una estación de trabajo de doble pantalla con un solo cable USB-C. 
+								Pantalla 16″ con resolución 1920×1200 y formato 16:10.
+							</p>
+							<ul class="space-y-2 mb-6">
+								<li class="flex items-center text-sm text-secondary">
+									<svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+									</svg>
+									Pantalla 16″ IPS con sRGB 100%
+								</li>
+								<li class="flex items-center text-sm text-secondary">
+									<svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+									</svg>
+									Compatibilidad total Mac/Windows
+								</li>
+								<li class="flex items-center text-sm text-secondary">
+									<svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+									</svg>
+									Conexión USB-C única
+								</li>
+							</ul>
+							<div class="flex items-center justify-between">
+								<span class="text-2xl font-bold text-accent">Desde US$ 799</span>
+								<span class="text-accent font-medium group-hover:translate-x-1 transition-transform duration-300">
+									Ver detalles →
+								</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Producto 2: S788 - Extensor 3 Monitores -->
+				<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden scroll-fade-in group">
+					<a href="/extensor-3-monitores" class="block">
+						<div class="relative overflow-hidden">
+							<img 
+								src="/S788/S788 mail pictures/S788主图 (1).jpg" 
+								alt="Extensor Triple Screen S788" 
+								class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+								loading="lazy"
+							/>
+							<div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+								Nuevo
+							</div>
+						</div>
+						<div class="p-6 md:p-8">
+							<h3 class="text-2xl md:text-3xl font-bold text-primary mb-3">
+								Extensor Triple Screen S788
+							</h3>
+							<p class="text-secondary mb-4">
+								El poder de 3 o 4 pantallas en un solo dispositivo portátil. Ideal para profesionales 
+								que requieren múltiples espacios de trabajo simultáneos.
+							</p>
+							<ul class="space-y-2 mb-6">
+								<li class="flex items-center text-sm text-secondary">
+									<svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+									</svg>
+									3-4 pantallas desplegables portátiles
+								</li>
+								<li class="flex items-center text-sm text-secondary">
+									<svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+									</svg>
+									Resolución 1920×1200 por pantalla
+								</li>
+								<li class="flex items-center text-sm text-secondary">
+									<svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+									</svg>
+									Diseño plegable ultra portátil
+								</li>
+							</ul>
+							<div class="flex items-center justify-between">
+								<span class="text-2xl font-bold text-accent">Desde US$ 999</span>
+								<span class="text-accent font-medium group-hover:translate-x-1 transition-transform duration-300">
+									Ver detalles →
+								</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección Contacto -->
+	<section id="contacto" class="py-20 md:py-28 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-3xl mx-auto text-center">
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+					¿Listo para <span class="text-accent">transformar</span> tu espacio de trabajo?
+				</h2>
+				<p class="text-lg text-secondary mb-8">
+					Contáctanos para más información sobre nuestros productos y servicios de importación
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a href="mailto:contacto@perurocket.com" class="inline-block bg-accent text-white px-8 py-3.5 rounded-md font-medium hover:bg-accent-hover transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+						Enviar email
+					</a>
+					<a href="tel:+51999999999" class="inline-block bg-white text-primary border-2 border-gray-200 px-8 py-3.5 rounded-md font-medium hover:border-accent hover:text-accent transition-all duration-300">
+						Llamar ahora
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="py-12 md:py-16 bg-gray-900 text-gray-300">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid md:grid-cols-3 gap-8 mb-8">
+				<!-- Logo y descripción -->
+				<div>
+					<img 
+						src="/logo_perurocket.png" 
+						alt="Perú Rocket Importaciones" 
+						class="h-16 w-auto mb-4 brightness-0 invert"
+						loading="lazy"
+					/>
+					<p class="text-sm text-gray-400">
+						Especialistas en importación de tecnología de vanguardia para mejorar tu productividad.
+					</p>
+				</div>
+
+				<!-- Enlaces rápidos -->
+				<div>
+					<h3 class="text-white font-semibold mb-4">Enlaces rápidos</h3>
+					<nav class="space-y-2">
+						<a href="#inicio" class="block text-sm hover:text-accent transition-colors duration-300">Inicio</a>
+						<a href="#nosotros" class="block text-sm hover:text-accent transition-colors duration-300">Nosotros</a>
+						<a href="#productos" class="block text-sm hover:text-accent transition-colors duration-300">Productos</a>
+						<a href="#contacto" class="block text-sm hover:text-accent transition-colors duration-300">Contacto</a>
+					</nav>
+				</div>
+
+				<!-- Productos -->
+				<div>
+					<h3 class="text-white font-semibold mb-4">Productos</h3>
+					<nav class="space-y-2">
+						<a href="/extensor-2-monitores-s900" class="block text-sm hover:text-accent transition-colors duration-300">Extensor Dual S900</a>
+						<a href="/extensor-3-monitores" class="block text-sm hover:text-accent transition-colors duration-300">Extensor Triple S788</a>
+					</nav>
+				</div>
+			</div>
+
+			<!-- Copyright -->
+			<div class="text-center text-xs text-gray-500 pt-4 border-t border-gray-800">
+				<p>© 2025 Perú Rocket Importaciones – Todos los derechos reservados</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Scripts para interactividad -->
+	<script>
+		// Menú móvil
+		const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+		const mobileMenu = document.getElementById('mobile-menu');
+		
+		if (mobileMenuBtn && mobileMenu) {
+			mobileMenuBtn.addEventListener('click', () => {
+				mobileMenu.classList.toggle('hidden');
+			});
+		}
+
+		// Animaciones al scroll
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				}
+			});
+		}, observerOptions);
+
+		document.querySelectorAll('.scroll-fade-in').forEach(el => {
+			observer.observe(el);
+		});
+
+		// Smooth scroll para anclas
+		document.querySelectorAll('a[href^="#"]').forEach((anchor: Element) => {
+			anchor.addEventListener('click', (e: Event) => {
+				e.preventDefault();
+				const href = (anchor as HTMLAnchorElement).getAttribute('href');
+				if (href) {
+					const target = document.querySelector(href);
+					if (target) {
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+						if (mobileMenu) mobileMenu.classList.add('hidden');
+					}
+				}
+			});
+		});
+	</script>
+
+	<style>
+		/* Animaciones */
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(-20px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes scaleIn {
+			from {
+				opacity: 0;
+				transform: scale(0.95);
+			}
+			to {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+
+		.animate-fade-in-up {
+			animation: fadeInUp 0.8s ease-out;
+		}
+
+		.animate-scale-in {
+			animation: scaleIn 0.8s ease-out;
+		}
+
+		.scroll-fade-in {
+			opacity: 0;
+			transform: translateY(20px);
+			transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+		}
+
+		.scroll-fade-in.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	</style>
+</LandingLayout>
