@@ -1,0 +1,796 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+---
+
+<LandingLayout>
+	<!-- Navegación Sticky -->
+	<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex justify-between items-center h-20 md:h-24">
+				<a href="#inicio" class="flex items-center h-full">
+					<img 
+						src="/logo_perurocket.png" 
+						alt="Perú Rocket Importaciones" 
+						class="h-14 md:h-20 w-auto object-contain"
+						loading="eager"
+					/>
+				</a>
+				<div class="hidden md:flex space-x-8 text-sm">
+					<a href="#inicio" class="text-gray-600 hover:text-accent transition-colors duration-300">Inicio</a>
+					<a href="#caracteristicas" class="text-gray-600 hover:text-accent transition-colors duration-300">Características</a>
+					<a href="#modos" class="text-gray-600 hover:text-accent transition-colors duration-300">Modos</a>
+					<a href="#especificaciones" class="text-gray-600 hover:text-accent transition-colors duration-300">Especificaciones</a>
+					<a href="#opiniones" class="text-gray-600 hover:text-accent transition-colors duration-300">Opiniones</a>
+					<a href="#comprar" class="text-gray-600 hover:text-accent transition-colors duration-300">Comprar</a>
+				</div>
+				<button class="md:hidden text-gray-600" id="mobile-menu-btn">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="md:hidden hidden bg-white border-t border-gray-100" id="mobile-menu">
+			<div class="px-4 pt-2 pb-4 space-y-2">
+				<a href="#inicio" class="block py-2 text-gray-600 hover:text-accent transition-colors">Inicio</a>
+				<a href="#caracteristicas" class="block py-2 text-gray-600 hover:text-accent transition-colors">Características</a>
+				<a href="#modos" class="block py-2 text-gray-600 hover:text-accent transition-colors">Modos</a>
+				<a href="#especificaciones" class="block py-2 text-gray-600 hover:text-accent transition-colors">Especificaciones</a>
+				<a href="#opiniones" class="block py-2 text-gray-600 hover:text-accent transition-colors">Opiniones</a>
+				<a href="#comprar" class="block py-2 text-gray-600 hover:text-accent transition-colors">Comprar</a>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Hero Section -->
+	<section id="inicio" class="pt-24 md:pt-28 min-h-[75vh] flex items-center bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+			<div class="grid md:grid-cols-[45%_55%] gap-8 lg:gap-12 items-center">
+				<!-- Columna Izquierda -->
+				<div class="animate-fade-in-up">
+					<h1 class="text-4xl md:text-5xl lg:text-[4.5rem] font-bold text-primary leading-tight mb-6">
+						Transforma tu laptop en una estación de trabajo de <span class="text-accent">múltiples pantallas</span>
+					</h1>
+					<p class="text-lg text-secondary leading-relaxed mb-8">
+						Accede a 4 pantallas con un solo cable, para trabajar, editar y crear sin límites.
+					</p>
+					<a href="#comprar" class="inline-block bg-accent text-white px-8 py-3.5 rounded-md font-medium hover:bg-accent-hover transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+						Ver oferta
+					</a>
+				</div>
+				<!-- Columna Derecha -->
+				<div class="animate-scale-in">
+					<div class="w-full mx-auto rounded-lg shadow-lg overflow-hidden">
+						<video 
+							autoplay 
+							loop 
+							muted 
+							playsinline
+							class="w-full h-auto rounded-lg"
+							poster="/S788/S788 mail pictures/S788主图 (1).jpg"
+						>
+							<source src="/S788/video1.mp4" type="video/mp4" />
+							<img 
+								src="/S788/S788 mail pictures/S788主图 (1).jpg" 
+								alt="Triple Screen Laptop Monitor Extender" 
+								class="w-full h-auto"
+								loading="eager"
+							/>
+						</video>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección de Características Principales -->
+	<section id="caracteristicas" class="py-20 md:py-24 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl md:text-4xl font-semibold text-primary text-center mb-10 md:mb-12">
+				Características destacadas
+			</h2>
+			
+			<!-- Tres Columnas Principales -->
+			<div class="grid md:grid-cols-3 gap-12 md:gap-16 mb-16">
+				<div class="scroll-fade-in">
+					<div class="text-accent text-5xl font-bold mb-4">01</div>
+					<h3 class="text-2xl font-semibold text-primary mb-4">
+						Pantalla triple/quad desplegable
+					</h3>
+					<p class="text-base text-secondary leading-relaxed">
+						Extiende tu espacio de trabajo hasta 3 o 4 monitores con un solo accesorio portátil.
+					</p>
+				</div>
+				
+				<div class="scroll-fade-in">
+					<div class="text-accent text-5xl font-bold mb-4">02</div>
+					<h3 class="text-2xl font-semibold text-primary mb-4">
+						Diseño plegable & portátil
+					</h3>
+					<p class="text-base text-secondary leading-relaxed">
+						Llévalo donde vayas, instala en cuestión de minutos y trabaja desde cualquier lugar.
+					</p>
+				</div>
+				
+				<div class="scroll-fade-in">
+					<div class="text-accent text-5xl font-bold mb-4">03</div>
+					<h3 class="text-2xl font-semibold text-primary mb-4">
+						Compatibilidad máxima
+					</h3>
+					<p class="text-base text-secondary leading-relaxed">
+						Compatible con laptops de 12″ a 18,5″, Mac (M1/M2/M3/M4) y Windows, con un solo cable.
+					</p>
+				</div>
+			</div>
+
+			<!-- Video de Instalación -->
+			<div class="mb-16 scroll-fade-in">
+				<div class="max-w-4xl mx-auto">
+					<h3 class="text-2xl font-semibold text-primary text-center mb-6">
+						Instalación en minutos
+					</h3>
+					<div class="rounded-lg overflow-hidden shadow-xl">
+						<video 
+							controls 
+							class="w-full"
+							poster="/S788/S788 mail pictures/S788主图 (2).jpg"
+						>
+							<source src="/S788/instalacion.mp4" type="video/mp4" />
+							Tu navegador no soporta la reproducción de videos.
+						</video>
+					</div>
+				</div>
+			</div>
+
+			<!-- Grid de Mini-Cards -->
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+				<div class="p-5 bg-white border border-gray-100 rounded-lg hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300 scroll-fade-in">
+					<div class="w-12 h-12 mb-3 flex items-center justify-center">
+						<svg class="w-full h-full text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+						</svg>
+					</div>
+					<h4 class="text-lg font-semibold text-primary mb-2">sRGB 100%</h4>
+					<p class="text-sm text-gray-600">Colores precisos y vibrantes</p>
+				</div>
+				
+				<div class="p-5 bg-white border border-gray-100 rounded-lg hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300 scroll-fade-in">
+					<div class="w-12 h-12 mb-3 flex items-center justify-center">
+						<svg class="w-full h-full text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+						</svg>
+					</div>
+					<h4 class="text-lg font-semibold text-primary mb-2">16:10 / 1920×1200</h4>
+					<p class="text-sm text-gray-600">Resolución Full HD+</p>
+				</div>
+				
+				<div class="p-5 bg-white border border-gray-100 rounded-lg hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300 scroll-fade-in">
+					<div class="w-12 h-12 mb-3 flex items-center justify-center">
+						<svg class="w-full h-full text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+						</svg>
+					</div>
+					<h4 class="text-lg font-semibold text-primary mb-2">Ángulo 178°</h4>
+					<p class="text-sm text-gray-600">Visión ultra amplia</p>
+				</div>
+				
+				<div class="p-5 bg-white border border-gray-100 rounded-lg hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300 scroll-fade-in">
+					<div class="w-12 h-12 mb-3 flex items-center justify-center">
+						<svg class="w-full h-full text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+						</svg>
+					</div>
+					<h4 class="text-lg font-semibold text-primary mb-2">Modos múltiples</h4>
+					<p class="text-sm text-gray-600">Despliegue flexible</p>
+				</div>
+				
+				<div class="p-5 bg-white border border-gray-100 rounded-lg hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300 scroll-fade-in">
+					<div class="w-12 h-12 mb-3 flex items-center justify-center">
+						<svg class="w-full h-full text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+						</svg>
+					</div>
+					<h4 class="text-lg font-semibold text-primary mb-2">Instalación rápida</h4>
+					<p class="text-sm text-gray-600">Listo en minutos</p>
+				</div>
+				
+				<div class="p-5 bg-white border border-gray-100 rounded-lg hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300 scroll-fade-in">
+					<div class="w-12 h-12 mb-3 flex items-center justify-center">
+						<svg class="w-full h-full text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+						</svg>
+					</div>
+					<h4 class="text-lg font-semibold text-primary mb-2">Soporte ergonómico</h4>
+					<p class="text-sm text-gray-600">Comodidad integrada</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección de Modos y Usos -->
+	<section id="modos" class="py-20 md:py-24 bg-[#f9f9f9]">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl md:text-4xl font-semibold text-primary text-center mb-12 md:mb-16">
+				Modos de visualización alternativos
+			</h2>
+			
+			<!-- Carousel Container -->
+			<div class="relative">
+				<div class="overflow-hidden">
+					<div class="flex gap-5 md:gap-8 transition-transform duration-500 ease-in-out" id="carousel-track">
+						<!-- Slide 1 -->
+						<div class="min-w-[calc(100%-2rem)] md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] scroll-fade-in">
+							<div class="bg-white rounded-lg overflow-hidden shadow-md hover:scale-105 hover:shadow-2xl transition-all duration-300">
+								<img 
+									src="/S788/S788 mail pictures/S788主图 (3).jpg" 
+									alt="Modo presentación" 
+									class="w-full h-[300px] object-cover"
+									loading="lazy"
+								/>
+								<div class="p-6">
+									<h3 class="text-xl font-medium text-primary">Modo presentación</h3>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Slide 2 -->
+						<div class="min-w-[calc(100%-2rem)] md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] scroll-fade-in">
+							<div class="bg-white rounded-lg overflow-hidden shadow-md hover:scale-105 hover:shadow-2xl transition-all duration-300">
+								<img 
+									src="/S788/S788 mail pictures/S788主图 (4).jpg" 
+									alt="Modo triple lateral" 
+									class="w-full h-[300px] object-cover"
+									loading="lazy"
+								/>
+								<div class="p-6">
+									<h3 class="text-xl font-medium text-primary">Modo triple lateral</h3>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Slide 3 -->
+						<div class="min-w-[calc(100%-2rem)] md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] scroll-fade-in">
+							<div class="bg-white rounded-lg overflow-hidden shadow-md hover:scale-105 hover:shadow-2xl transition-all duration-300">
+								<img 
+									src="/S788/S788 mail pictures/S788主图 (5).jpg" 
+									alt="Modo cuádruple + superior" 
+									class="w-full h-[300px] object-cover"
+									loading="lazy"
+								/>
+								<div class="p-6">
+									<h3 class="text-xl font-medium text-primary">Modo cuádruple + superior</h3>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Slide 4 -->
+						<div class="min-w-[calc(100%-2rem)] md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] scroll-fade-in">
+							<div class="bg-white rounded-lg overflow-hidden shadow-md hover:scale-105 hover:shadow-2xl transition-all duration-300">
+								<img 
+									src="/S788/S788 mail pictures/S788主图 (6).jpg" 
+									alt="Modo oficina colaborativa" 
+									class="w-full h-[300px] object-cover"
+									loading="lazy"
+								/>
+								<div class="p-6">
+									<h3 class="text-xl font-medium text-primary">Modo oficina colaborativa</h3>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Slide 5 -->
+						<div class="min-w-[calc(100%-2rem)] md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] scroll-fade-in">
+							<div class="bg-white rounded-lg overflow-hidden shadow-md hover:scale-105 hover:shadow-2xl transition-all duration-300">
+								<img 
+									src="/S788/S788 mail pictures/S788主图 (7).jpg" 
+									alt="Modo edición/vídeo" 
+									class="w-full h-[300px] object-cover"
+									loading="lazy"
+								/>
+								<div class="p-6">
+									<h3 class="text-xl font-medium text-primary">Modo edición/vídeo</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Navegación -->
+				<button id="carousel-prev" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors text-gray-400 hover:text-accent z-10">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+					</svg>
+				</button>
+				<button id="carousel-next" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors text-gray-400 hover:text-accent z-10">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+					</svg>
+				</button>
+				
+				<!-- Paginación -->
+				<div class="flex justify-center gap-2 mt-8" id="carousel-dots">
+					<button class="w-2.5 h-2.5 rounded-full bg-accent transition-all" data-slide="0"></button>
+					<button class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all" data-slide="1"></button>
+					<button class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all" data-slide="2"></button>
+					<button class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all" data-slide="3"></button>
+					<button class="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 transition-all" data-slide="4"></button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección de Especificaciones Técnicas -->
+	<section id="especificaciones" class="py-20 md:py-24 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl md:text-4xl font-semibold text-primary text-center mb-12 md:mb-16">
+				Especificaciones técnicas
+			</h2>
+			
+			<div class="grid md:grid-cols-2 gap-12 md:gap-16 items-start mb-16">
+				<!-- Columna Izquierda -->
+				<div class="space-y-6 scroll-fade-in">
+					<div class="flex gap-4">
+						<div class="flex-shrink-0 w-8 h-8 text-accent">
+							<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-lg font-semibold text-primary mb-1">Resolución</h3>
+							<p class="text-sm text-gray-600">1920×1200 (1200P) / 16:10</p>
+						</div>
+					</div>
+					
+					<div class="flex gap-4">
+						<div class="flex-shrink-0 w-8 h-8 text-accent">
+							<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-lg font-semibold text-primary mb-1">Cobertura sRGB</h3>
+							<p class="text-sm text-gray-600">100% de precisión de color</p>
+						</div>
+					</div>
+					
+					<div class="flex gap-4">
+						<div class="flex-shrink-0 w-8 h-8 text-accent">
+							<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-lg font-semibold text-primary mb-1">Panel IPS</h3>
+							<p class="text-sm text-gray-600">178° de ángulo de visión</p>
+						</div>
+					</div>
+					
+					<div class="flex gap-4">
+						<div class="flex-shrink-0 w-8 h-8 text-accent">
+							<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-lg font-semibold text-primary mb-1">Compatibilidad</h3>
+							<p class="text-sm text-gray-600">12″-18.5″ laptops (Mac M1/M2/M3/M4 y Windows)</p>
+						</div>
+					</div>
+					
+					<div class="flex gap-4">
+						<div class="flex-shrink-0 w-8 h-8 text-accent">
+							<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path>
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-lg font-semibold text-primary mb-1">Conectividad</h3>
+							<p class="text-sm text-gray-600">USB-C (1 cable para 3 displays)</p>
+						</div>
+					</div>
+					
+					<div class="flex gap-4">
+						<div class="flex-shrink-0 w-8 h-8 text-accent">
+							<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+							</svg>
+						</div>
+						<div>
+							<h3 class="text-lg font-semibold text-primary mb-1">Ángulos de rotación</h3>
+							<p class="text-sm text-gray-600">Laterales 0-360°, superior 0-180°</p>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Columna Derecha -->
+				<div class="scroll-fade-in">
+					<img 
+						src="/S788/S788 details/S788 详情页 (1).jpg" 
+						alt="Especificaciones técnicas del monitor extender" 
+						class="w-full max-w-[500px] mx-auto rounded-lg shadow-lg"
+						loading="lazy"
+					/>
+				</div>
+			</div>
+			
+			<!-- Garantía -->
+			<div class="text-center scroll-fade-in">
+				<div class="inline-flex flex-wrap items-center justify-center gap-6 md:gap-8 text-base text-secondary">
+					<div class="flex items-center gap-2">
+						<svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+						</svg>
+						<span>Garantía de satisfacción 30 días</span>
+					</div>
+					<span class="text-gray-300">·</span>
+					<div class="flex items-center gap-2">
+						<svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>Envío gratuito</span>
+					</div>
+					<span class="text-gray-300">·</span>
+					<div class="flex items-center gap-2">
+						<svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+						</svg>
+						<span>Soporte premium</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección de Testimonios -->
+	<section id="opiniones" class="py-20 md:py-24 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl md:text-4xl font-semibold text-primary text-center mb-12 md:mb-16">
+				Lo que dicen nuestros usuarios
+			</h2>
+			
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+				<div class="bg-white border border-gray-100 rounded-lg p-6 md:p-8 hover:shadow-xl transition-shadow duration-300 scroll-fade-in">
+					<div class="flex items-center gap-4 mb-4">
+						<img 
+							src="https://i.pravatar.cc/80?img=1" 
+							alt="Usuario" 
+							class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover"
+							loading="lazy"
+						/>
+						<div>
+							<h4 class="text-lg font-semibold text-primary">María González</h4>
+							<p class="text-sm text-gray-500">Diseñadora Gráfica</p>
+						</div>
+					</div>
+					<p class="text-base text-secondary leading-relaxed">
+						"El mejor accesorio que he comprado para mi MacBook. Trabajar con 3 pantallas simultáneas ha transformado mi productividad. La calidad de imagen es excelente y el montaje es súper sencillo."
+					</p>
+				</div>
+				
+				<div class="bg-white border border-gray-100 rounded-lg p-6 md:p-8 hover:shadow-xl transition-shadow duration-300 scroll-fade-in">
+					<div class="flex items-center gap-4 mb-4">
+						<img 
+							src="https://i.pravatar.cc/80?img=12" 
+							alt="Usuario" 
+							class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover"
+							loading="lazy"
+						/>
+						<div>
+							<h4 class="text-lg font-semibold text-primary">Carlos Ramírez</h4>
+							<p class="text-sm text-gray-500">Desarrollador de Software</p>
+						</div>
+					</div>
+					<p class="text-base text-secondary leading-relaxed">
+						"Perfecto para programar. Tengo mi código en una pantalla, la documentación en otra y el navegador en la tercera. La instalación fue cuestión de minutos y funciona perfectamente con un solo cable USB-C."
+					</p>
+				</div>
+				
+				<div class="bg-white border border-gray-100 rounded-lg p-6 md:p-8 hover:shadow-xl transition-shadow duration-300 scroll-fade-in">
+					<div class="flex items-center gap-4 mb-4">
+						<img 
+							src="https://i.pravatar.cc/80?img=47" 
+							alt="Usuario" 
+							class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover"
+							loading="lazy"
+						/>
+						<div>
+							<h4 class="text-lg font-semibold text-primary">Ana Martínez</h4>
+							<p class="text-sm text-gray-500">Editora de Video</p>
+						</div>
+					</div>
+					<p class="text-base text-secondary leading-relaxed">
+						"Increíble para edición de video. El modo cuádruple me permite tener la línea de tiempo, preview, efectos y assets todos visibles. El color sRGB 100% es impresionante, muy recomendado."
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección de Oferta + CTA Final -->
+	<section id="comprar" class="py-24 md:py-32 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl md:text-4xl font-semibold text-primary text-center mb-12 md:mb-16">
+				Elige tu versión perfecta para ti
+			</h2>
+			
+			<div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+				<!-- Columna Izquierda: Imagen -->
+				<div class="scroll-fade-in">
+					<img 
+						src="/S788/S788 mail pictures/S788主图 (8).jpg" 
+						alt="Triple Screen Monitor Extender" 
+						class="w-full max-w-[550px] mx-auto rounded-lg shadow-xl"
+						loading="lazy"
+					/>
+				</div>
+				
+				<!-- Columna Derecha: Información de compra -->
+				<div class="scroll-fade-in">
+					<!-- Mini-galería de variantes -->
+					<div class="flex gap-4 mb-8">
+						
+						<div class="flex flex-col items-center cursor-pointer group">
+							<div class="w-20 h-20 border-2 border-gray-200 rounded-lg overflow-hidden group-hover:border-accent transition-colors duration-300">
+								<img 
+									src="/S788/S788 mail pictures/S788主图 (10).jpg" 
+									alt="Versión Pro" 
+									class="w-full h-full object-cover"
+									loading="lazy"
+								/>
+							</div>
+							<span class="text-sm text-gray-600 mt-2">Versión Pro</span>
+						</div>
+					</div>
+					
+					<!-- Precio -->
+					<div class="mb-8">
+						<p class="text-4xl md:text-5xl font-bold text-accent">Desde US$ 999</p>
+					</div>
+					
+					<!-- Botón CTA -->
+					<a href="#" class="inline-block bg-accent text-white text-lg font-medium px-10 py-4 rounded-md hover:bg-accent-hover transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 mb-6">
+						Comprar ahora
+					</a>
+					
+					<!-- Información adicional -->
+					<div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+						<div class="flex items-center gap-1.5">
+							<svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+							</svg>
+							<span>Envío gratuito</span>
+						</div>
+						<span>·</span>
+						<div class="flex items-center gap-1.5">
+							<svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+							</svg>
+							<span>Garantía 30 días</span>
+						</div>
+						<span>·</span>
+						<div class="flex items-center gap-1.5">
+							<svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+							<span>Instalación rápida</span>
+						</div>
+					</div>
+					
+					<!-- Banda de urgencia -->
+					<div class="mt-8 bg-[#ff4d4d] text-white px-6 py-4 rounded-md text-center animate-pulse">
+						<p class="text-base font-medium">
+							Sólo 50 unidades disponibles para el lanzamiento — haz tu pedido hoy
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="py-12 md:py-16 bg-white border-t border-gray-100">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<!-- Fila superior -->
+			<div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+				<!-- Menú de navegación -->
+				<nav class="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-sm font-medium text-gray-600">
+					<a href="#inicio" class="hover:text-accent transition-colors duration-300">Inicio</a>
+					<span class="text-gray-300">·</span>
+					<a href="#caracteristicas" class="hover:text-accent transition-colors duration-300">Características</a>
+					<span class="text-gray-300">·</span>
+					<a href="#modos" class="hover:text-accent transition-colors duration-300">Modos</a>
+					<span class="text-gray-300">·</span>
+					<a href="#especificaciones" class="hover:text-accent transition-colors duration-300">Especificaciones</a>
+					<span class="text-gray-300">·</span>
+					<a href="#opiniones" class="hover:text-accent transition-colors duration-300">Opiniones</a>
+					<span class="text-gray-300">·</span>
+					<a href="#comprar" class="hover:text-accent transition-colors duration-300">Comprar</a>
+				</nav>
+				
+				<!-- Redes sociales -->
+				<div class="flex gap-4">
+					<a href="#" class="text-gray-500 hover:text-accent transition-colors duration-300" aria-label="Facebook">
+						<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+						</svg>
+					</a>
+					<a href="#" class="text-gray-500 hover:text-accent transition-colors duration-300" aria-label="Twitter">
+						<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+						</svg>
+					</a>
+					<a href="#" class="text-gray-500 hover:text-accent transition-colors duration-300" aria-label="Instagram">
+						<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+			
+			<!-- Copyright -->
+			<div class="text-center text-xs text-gray-400 pt-4 border-t border-gray-100">
+				<p>© 2025 Perú Rocket Importaciones – Todos los derechos reservados</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Scripts para interactividad -->
+	<script>
+		// Menú móvil
+		const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+		const mobileMenu = document.getElementById('mobile-menu');
+		
+		if (mobileMenuBtn && mobileMenu) {
+			mobileMenuBtn.addEventListener('click', () => {
+				mobileMenu.classList.toggle('hidden');
+			});
+		}
+
+		// Carousel de modos
+		let currentSlide = 0;
+		const totalSlides = 5;
+		const carouselTrack = document.getElementById('carousel-track');
+		const dots = document.querySelectorAll('#carousel-dots button');
+		const prevBtn = document.getElementById('carousel-prev');
+		const nextBtn = document.getElementById('carousel-next');
+		let autoplayInterval: ReturnType<typeof setInterval> | undefined;
+
+		function updateCarousel() {
+			if (carouselTrack) {
+				const slideWidth = 100 / (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1);
+				carouselTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+			}
+			
+			// Actualizar dots
+			dots.forEach((dot, index) => {
+				if (index === currentSlide) {
+					dot.classList.remove('bg-gray-300');
+					dot.classList.add('bg-accent');
+				} else {
+					dot.classList.remove('bg-accent');
+					dot.classList.add('bg-gray-300');
+				}
+			});
+		}
+
+		function nextSlide() {
+			currentSlide = (currentSlide + 1) % totalSlides;
+			updateCarousel();
+		}
+
+		function prevSlide() {
+			currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+			updateCarousel();
+		}
+
+		if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+		if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+		// Navegación por dots
+		dots.forEach((dot, index) => {
+			dot.addEventListener('click', () => {
+				currentSlide = index;
+				updateCarousel();
+			});
+		});
+
+		// Autoplay
+		function startAutoplay() {
+			autoplayInterval = setInterval(nextSlide, 4000);
+		}
+
+		const carouselContainer = document.getElementById('modos');
+		if (carouselContainer) {
+			carouselContainer.addEventListener('mouseenter', () => {
+				if (autoplayInterval) clearInterval(autoplayInterval);
+			});
+			carouselContainer.addEventListener('mouseleave', startAutoplay);
+		}
+
+		startAutoplay();
+		updateCarousel();
+
+		// Animaciones al scroll
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				}
+			});
+		}, observerOptions);
+
+		document.querySelectorAll('.scroll-fade-in').forEach(el => {
+			observer.observe(el);
+		});
+
+		// Smooth scroll para anclas
+		document.querySelectorAll('a[href^="#"]').forEach((anchor: Element) => {
+			anchor.addEventListener('click', (e: Event) => {
+				e.preventDefault();
+				const href = (anchor as HTMLAnchorElement).getAttribute('href');
+				if (href) {
+					const target = document.querySelector(href);
+					if (target) {
+						target.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+						if (mobileMenu) mobileMenu.classList.add('hidden');
+					}
+				}
+			});
+		});
+	</script>
+
+	<style>
+		/* Animaciones */
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(-20px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes scaleIn {
+			from {
+				opacity: 0;
+				transform: scale(0.95);
+			}
+			to {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+
+		.animate-fade-in-up {
+			animation: fadeInUp 0.8s ease-out;
+		}
+
+		.animate-scale-in {
+			animation: scaleIn 0.8s ease-out;
+		}
+
+		.scroll-fade-in {
+			opacity: 0;
+			transform: translateY(20px);
+			transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+		}
+
+		.scroll-fade-in.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	</style>
+</LandingLayout>
+

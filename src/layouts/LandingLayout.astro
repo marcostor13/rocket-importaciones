@@ -1,0 +1,38 @@
+---
+interface Props {
+	title?: string;
+}
+
+const { title = 'Triple/Quad Screen Laptop Monitor Extender | Rocket Import' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Transforma tu laptop en una estación de trabajo de múltiples pantallas. Accede a 3 o 4 pantallas con un solo cable." />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+	</head>
+	<body class="font-sans antialiased scroll-smooth">
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		width: 100%;
+		min-height: 100vh;
+	}
+</style>
+
