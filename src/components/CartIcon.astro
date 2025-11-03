@@ -1,0 +1,67 @@
+---
+// Componente del icono del carrito con contador
+---
+
+<a 
+	href="/carrito" 
+	class="relative flex items-center justify-center p-2 text-gray-600 hover:text-accent transition-colors duration-300"
+	aria-label="Ver carrito"
+	id="cart-icon-link"
+>
+	<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+	</svg>
+	<span 
+		id="cart-count" 
+		class="absolute -top-1 -right-1 bg-accent text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center opacity-0 pointer-events-none"
+	>
+		0
+	</span>
+</a>
+
+<script>
+	// Función para obtener el carrito de las cookies
+	function getCart() {
+		const cartCookie = document.cookie
+			.split('; ')
+			.find(row => row.startsWith('cart='));
+		
+		if (!cartCookie) return [];
+		
+		try {
+			const cartData = decodeURIComponent(cartCookie.split('=')[1]);
+			return JSON.parse(cartData);
+		} catch {
+			return [];
+		}
+	}
+
+	// Función para actualizar el contador del carrito
+	function updateCartCount() {
+		const cart = getCart();
+		const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+		const cartCount = document.getElementById('cart-count');
+		
+		if (cartCount) {
+			if (totalItems > 0) {
+				cartCount.textContent = totalItems;
+				cartCount.classList.remove('opacity-0', 'pointer-events-none');
+				cartCount.classList.add('opacity-100');
+			} else {
+				cartCount.classList.add('opacity-0', 'pointer-events-none');
+				cartCount.classList.remove('opacity-100');
+			}
+		}
+	}
+
+	// Actualizar contador al cargar y cuando cambia el carrito
+	updateCartCount();
+	
+	// Escuchar eventos de cambio en el carrito
+	window.addEventListener('storage', updateCartCount);
+	document.addEventListener('cartUpdated', updateCartCount);
+	
+	// Actualizar cada vez que se hace clic (para cambios en la misma pestaña)
+	setInterval(updateCartCount, 500);
+</script>
+

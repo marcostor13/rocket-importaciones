@@ -1,5 +1,7 @@
 ---
 import LandingLayout from '../layouts/LandingLayout.astro';
+import CartIcon from '../components/CartIcon.astro';
+import CartModal from '../components/CartModal.astro';
 ---
 
 <LandingLayout>
@@ -15,9 +17,7 @@ import LandingLayout from '../layouts/LandingLayout.astro';
 						loading="eager"
 					/>
 				</a>
-				<a href="/" class="text-gray-600 hover:text-accent transition-colors duration-300 text-sm">
-					← Volver al inicio
-				</a>
+				<CartIcon />
 			</div>
 		</div>
 	</nav>
@@ -158,9 +158,14 @@ import LandingLayout from '../layouts/LandingLayout.astro';
 					</div>
 
 					<!-- CTA Principal -->
-					<a href="https://wa.me/51987951023?text=Hola,%20quiero%20comprar%20el%20Extensor%20Triple%20Screen%20S788" target="_blank" rel="noopener noreferrer" class="w-full inline-block bg-accent text-white text-lg font-medium px-8 py-4 rounded-md hover:bg-accent-hover transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center mb-6">
-						Comprar ahora
-					</a>
+					<div class="flex gap-4 mb-6">
+						<button onclick="addToCart('s788'); openCartModal();" class="flex-1 bg-accent text-white text-lg font-medium px-8 py-4 rounded-md hover:bg-accent-hover transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
+							Agregar al carrito
+						</button>
+						<a href="https://wa.me/51987951023?text=Hola,%20quiero%20comprar%20el%20Extensor%20Triple%20Screen%20S788" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 text-primary text-lg font-medium px-8 py-4 rounded-md hover:bg-gray-300 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
+							Comprar ahora
+						</a>
+					</div>
 
 					<!-- Beneficios rápidos -->
 					<div class="space-y-3 mb-6">
@@ -372,7 +377,7 @@ import LandingLayout from '../layouts/LandingLayout.astro';
 							<source src="/S788/video1.mp4" type="video/mp4" />
 							Tu navegador no soporta la reproducción de videos.
 						</video>
-					</div>
+				</div>
 			</div>
 
 				<!-- Video 2: Instalación -->
@@ -408,13 +413,18 @@ import LandingLayout from '../layouts/LandingLayout.astro';
 						<p class="text-sm text-gray-500 mb-1">Precio habitual <span class="line-through">US$ 1,299</span></p>
 						<p class="text-4xl md:text-5xl font-bold text-accent mb-2">US$ 999</p>
 						<p class="text-sm text-gray-600">Ahorra US$ 300</p>
-					</div>
-					<a href="https://wa.me/51987951023?text=Hola,%20quiero%20comprar%20el%20Extensor%20Triple%20Screen%20S788" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto bg-accent text-white text-lg font-medium px-10 py-4 rounded-md hover:bg-accent-hover transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
-						Comprar ahora
-					</a>
-				</div>
-			</div>
-
+								</div>
+					<div class="flex gap-4 flex-col sm:flex-row">
+						<button onclick="addToCart('s788'); openCartModal();" class="flex-1 bg-accent text-white text-lg font-medium px-10 py-4 rounded-md hover:bg-accent-hover transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
+							Agregar al carrito
+						</button>
+						<a href="https://wa.me/51987951023?text=Hola,%20quiero%20comprar%20el%20Extensor%20Triple%20Screen%20S788" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 text-primary text-lg font-medium px-10 py-4 rounded-md hover:bg-gray-300 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
+							Comprar ahora
+						</a>
+								</div>
+							</div>
+						</div>
+						
 			<!-- Banda de urgencia -->
 			<div class="bg-[#ff4d4d] text-white px-6 py-4 rounded-md text-center mb-8 animate-pulse">
 				<p class="text-base font-medium">
@@ -553,19 +563,20 @@ import LandingLayout from '../layouts/LandingLayout.astro';
 	</section>
 
 	<!-- Botón Flotante de Compra -->
-	<a 
-		href="https://wa.me/51987951023?text=Hola,%20quiero%20comprar%20el%20Extensor%20Triple%20Screen%20S788" 
-		target="_blank" 
-		rel="noopener noreferrer"
+	<button 
+		onclick="addToCart('s788'); openCartModal();"
 		id="floating-buy-button"
 		class="fixed bottom-6 left-6 z-40 bg-accent text-white px-6 py-4 rounded-full shadow-2xl hover:bg-accent-hover transition-all duration-300 hover:scale-105 flex items-center gap-3 group opacity-0 pointer-events-none translate-y-4"
-		aria-label="Comprar ahora"
+		aria-label="Agregar al carrito"
 	>
 		<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
 		</svg>
-		<span class="text-base font-semibold whitespace-nowrap">Comprar ahora</span>
-	</a>
+		<span class="text-base font-semibold whitespace-nowrap">Agregar al carrito</span>
+	</button>
+
+	<!-- Modal del Carrito -->
+	<CartModal />
 
 	<!-- Botón Flotante WhatsApp -->
 	<a 
@@ -747,6 +758,8 @@ import LandingLayout from '../layouts/LandingLayout.astro';
 		window.addEventListener('scroll', handleScroll);
 		handleScroll(); // Verificar posición inicial
 	</script>
+
+	<script is:inline src="/cart.js"></script>
 
 	<style>
 		#main-image-container {

@@ -1,5 +1,6 @@
 ---
 import LandingLayout from '../layouts/LandingLayout.astro';
+import CartIcon from '../components/CartIcon.astro';
 ---
 
 <LandingLayout title="Perú Rocket Importaciones - Monitores Extensores Portátiles">
@@ -15,13 +16,16 @@ import LandingLayout from '../layouts/LandingLayout.astro';
 						loading="eager"
 					/>
 				</a>
-				<div class="hidden md:flex space-x-8 text-sm">
+				<div class="hidden md:flex items-center space-x-8 text-sm">
 					<a href="#inicio" class="text-gray-600 hover:text-accent transition-colors duration-300">Inicio</a>
 					<a href="#nosotros" class="text-gray-600 hover:text-accent transition-colors duration-300">Nosotros</a>
 					<a href="#productos" class="text-gray-600 hover:text-accent transition-colors duration-300">Productos</a>
 					<a href="#contacto" class="text-gray-600 hover:text-accent transition-colors duration-300">Contacto</a>
+					<CartIcon />
 				</div>
-				<button class="md:hidden text-gray-600" id="mobile-menu-btn">
+				<div class="md:hidden flex items-center gap-2">
+					<CartIcon />
+					<button class="text-gray-600" id="mobile-menu-btn">
 					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
 					</svg>
@@ -228,14 +232,21 @@ import LandingLayout from '../layouts/LandingLayout.astro';
 									Conexión USB-C única
 								</li>
 							</ul>
-							<div class="flex items-center justify-between">
+							<div class="flex items-center justify-between mb-4">
 								<span class="text-2xl font-bold text-accent">Desde US$ 799</span>
-								<span class="text-accent font-medium group-hover:translate-x-1 transition-transform duration-300">
+								<a href="/extensor-2-monitores-s900" class="text-accent font-medium group-hover:translate-x-1 transition-transform duration-300">
 									Ver detalles →
-								</span>
+								</a>
+							</div>
+							<div class="flex gap-3">
+								<button onclick="addToCart('s900'); openCartModal();" class="flex-1 bg-accent text-white py-2 px-4 rounded-md hover:bg-accent-hover transition-colors duration-300 font-medium text-center">
+									Agregar al carrito
+								</button>
+								<a href="/extensor-2-monitores-s900" class="bg-gray-200 text-primary py-2 px-4 rounded-md hover:bg-gray-300 transition-colors duration-300 font-medium text-center">
+									Ver más
+								</a>
 							</div>
 						</div>
-					</a>
 				</div>
 
 				<!-- Producto 2: S788 - Extensor 3 Monitores -->
@@ -280,14 +291,21 @@ import LandingLayout from '../layouts/LandingLayout.astro';
 									Diseño plegable ultra portátil
 								</li>
 							</ul>
-							<div class="flex items-center justify-between">
+							<div class="flex items-center justify-between mb-4">
 								<span class="text-2xl font-bold text-accent">Desde US$ 999</span>
-								<span class="text-accent font-medium group-hover:translate-x-1 transition-transform duration-300">
+								<a href="/extensor-3-monitores" class="text-accent font-medium group-hover:translate-x-1 transition-transform duration-300">
 									Ver detalles →
-								</span>
+								</a>
+							</div>
+							<div class="flex gap-3">
+								<button onclick="addToCart('s788'); openCartModal();" class="flex-1 bg-accent text-white py-2 px-4 rounded-md hover:bg-accent-hover transition-colors duration-300 font-medium text-center">
+									Agregar al carrito
+								</button>
+								<a href="/extensor-3-monitores" class="bg-gray-200 text-primary py-2 px-4 rounded-md hover:bg-gray-300 transition-colors duration-300 font-medium text-center">
+									Ver más
+								</a>
 							</div>
 						</div>
-					</a>
 				</div>
 			</div>
 		</div>
@@ -451,5 +469,36 @@ import LandingLayout from '../layouts/LandingLayout.astro';
 			opacity: 1;
 			transform: translateY(0);
 		}
+
+		@keyframes slideIn {
+			from {
+				transform: translateX(100%);
+				opacity: 0;
+			}
+			to {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+
+		@keyframes slideOut {
+			from {
+				transform: translateX(0);
+				opacity: 1;
+			}
+			to {
+				transform: translateX(100%);
+				opacity: 0;
+			}
+		}
+
+		.animate-slide-in {
+			animation: slideIn 0.3s ease-out;
+		}
+
+		.animate-slide-out {
+			animation: slideOut 0.3s ease-out;
+		}
 	</style>
+	<script is:inline src="/cart.js"></script>
 </LandingLayout>

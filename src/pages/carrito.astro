@@ -1,0 +1,229 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import CartIcon from '../components/CartIcon.astro';
+---
+
+<LandingLayout title="Carrito de Compras - Perú Rocket Importaciones">
+	<!-- Navegación Sticky -->
+	<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex justify-between items-center h-20 md:h-24">
+				<a href="/" class="flex items-center h-full">
+					<img 
+						src="/logo_perurocket.png" 
+						alt="Perú Rocket Importaciones" 
+						class="h-14 md:h-20 w-auto object-contain"
+						loading="eager"
+					/>
+				</a>
+				<CartIcon />
+			</div>
+		</div>
+	</nav>
+
+	<!-- Contenido del Carrito -->
+	<section class="pt-28 md:pt-32 pb-12 min-h-screen bg-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h1 class="text-3xl md:text-4xl font-bold text-primary mb-8">Carrito de Compras</h1>
+			
+			<div id="cart-content" class="bg-gray-50 rounded-lg p-6 md:p-8 mb-6">
+				<!-- Los items se renderizarán aquí -->
+			</div>
+
+			<div id="cart-empty" class="bg-gray-50 rounded-lg p-12 text-center hidden">
+				<svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+				</svg>
+				<p class="text-gray-500 text-lg mb-4">Tu carrito está vacío</p>
+				<a href="/" class="inline-block text-accent hover:underline font-semibold">Seguir comprando</a>
+			</div>
+
+			<div id="cart-footer" class="bg-white border-2 border-gray-200 rounded-lg p-6 hidden">
+				<div class="flex justify-between items-center mb-6">
+					<span class="text-xl font-semibold text-gray-700">Total:</span>
+					<span id="cart-total" class="text-3xl font-bold text-accent">US$ 0</span>
+				</div>
+				<button 
+					id="checkout-button"
+					class="w-full bg-accent text-white py-4 px-8 rounded-md font-semibold text-lg hover:bg-accent-hover transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+					disabled
+				>
+					Finalizar Compra en WhatsApp
+				</button>
+			</div>
+		</div>
+	</section>
+</LandingLayout>
+
+<script>
+	const PRODUCTS = {
+		's900': {
+			name: 'Extensor Dual Screen S900',
+			price: 799,
+			url: '/extensor-2-monitores-s900'
+		},
+		's788': {
+			name: 'Extensor Triple Screen S788',
+			price: 999,
+			url: '/extensor-3-monitores'
+		}
+	};
+
+	function getCart() {
+		const cartCookie = document.cookie
+			.split('; ')
+			.find(row => row.startsWith('cart='));
+		
+		if (!cartCookie) return [];
+		
+		try {
+			const cartData = decodeURIComponent(cartCookie.split('=')[1]);
+			return JSON.parse(cartData);
+		} catch {
+			return [];
+		}
+	}
+
+	function saveCart(cart) {
+		const cartData = JSON.stringify(cart);
+		const expires = new Date();
+		expires.setTime(expires.getTime() + (30 * 24 * 60 * 60 * 1000));
+		document.cookie = `cart=${encodeURIComponent(cartData)}; expires=${expires.toUTCString()}; path=/`;
+		document.dispatchEvent(new CustomEvent('cartUpdated'));
+		window.dispatchEvent(new Event('storage'));
+		renderCart();
+	}
+
+	function renderCart() {
+		const cart = getCart();
+		const cartContent = document.getElementById('cart-content');
+		const cartEmpty = document.getElementById('cart-empty');
+		const cartFooter = document.getElementById('cart-footer');
+		const cartTotal = document.getElementById('cart-total');
+		const checkoutButton = document.getElementById('checkout-button');
+		
+		if (!cartContent || !cartEmpty || !cartFooter) return;
+
+		if (cart.length === 0) {
+			cartContent.classList.add('hidden');
+			cartEmpty.classList.remove('hidden');
+			cartFooter.classList.add('hidden');
+			return;
+		}
+
+		cartContent.classList.remove('hidden');
+		cartEmpty.classList.add('hidden');
+		cartFooter.classList.remove('hidden');
+
+		let total = 0;
+		cartContent.innerHTML = cart.map((item, index) => {
+			const product = PRODUCTS[item.id];
+			if (!product) return '';
+			
+			const itemTotal = product.price * (item.quantity || 1);
+			total += itemTotal;
+			
+			return `
+				<div class="flex items-center gap-4 p-4 bg-white rounded-lg mb-4 last:mb-0">
+					<div class="flex-1">
+						<h3 class="font-semibold text-primary text-lg">${product.name}</h3>
+						<p class="text-sm text-gray-600 mt-1">Precio unitario: US$ ${product.price.toLocaleString()}</p>
+						<p class="text-accent font-semibold text-lg mt-2">US$ ${itemTotal.toLocaleString()}</p>
+					</div>
+					<div class="flex items-center gap-3">
+						<button 
+							onclick="window.updateQuantity(${index}, -1)"
+							class="w-10 h-10 rounded-full border-2 border-gray-300 hover:bg-gray-100 flex items-center justify-center transition-colors disabled:opacity-50"
+							${item.quantity <= 1 ? 'disabled' : ''}
+						>
+							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+							</svg>
+						</button>
+						<span class="w-12 text-center font-semibold text-lg">${item.quantity || 1}</span>
+						<button 
+							onclick="window.updateQuantity(${index}, 1)"
+							class="w-10 h-10 rounded-full border-2 border-gray-300 hover:bg-gray-100 flex items-center justify-center transition-colors"
+						>
+							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+							</svg>
+						</button>
+						<button 
+							onclick="window.removeFromCart(${index})"
+							class="ml-4 text-red-500 hover:text-red-700 transition-colors p-2"
+							aria-label="Eliminar producto"
+						>
+							<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			`;
+		}).join('');
+
+		if (cartTotal) {
+			cartTotal.textContent = `US$ ${total.toLocaleString()}`;
+		}
+		
+		if (checkoutButton) {
+			checkoutButton.disabled = false;
+		}
+	}
+
+	function updateQuantity(index: number, change: number) {
+		const cart = getCart();
+		if (cart[index]) {
+			cart[index].quantity = (cart[index].quantity || 1) + change;
+			if (cart[index].quantity <= 0) {
+				cart.splice(index, 1);
+			}
+			saveCart(cart);
+		}
+	}
+
+	function removeFromCart(index: number) {
+		const cart = getCart();
+		cart.splice(index, 1);
+		saveCart(cart);
+	}
+
+	(window as any).updateQuantity = updateQuantity;
+	(window as any).removeFromCart = removeFromCart;
+
+	const checkoutButton = document.getElementById('checkout-button');
+	if (checkoutButton) {
+		checkoutButton.addEventListener('click', () => {
+			const cart = getCart();
+			if (cart.length === 0) return;
+
+			let message = 'Hola, quiero comprar los siguientes productos:\n\n';
+			let total = 0;
+
+			cart.forEach((item) => {
+				const product = PRODUCTS[item.id as keyof typeof PRODUCTS];
+				if (product) {
+					const itemTotal = product.price * (item.quantity || 1);
+					total += itemTotal;
+					message += `• ${product.name} x${item.quantity || 1} - US$ ${itemTotal.toLocaleString()}\n`;
+				}
+			});
+
+			message += `\nTotal: US$ ${total.toLocaleString()}`;
+			
+			const whatsappUrl = `https://wa.me/51987951023?text=${encodeURIComponent(message)}`;
+			window.open(whatsappUrl, '_blank');
+		});
+	}
+
+	// Renderizar al cargar
+	renderCart();
+
+	// Actualizar cuando cambie el carrito
+	document.addEventListener('cartUpdated', renderCart);
+	window.addEventListener('storage', renderCart);
+</script>
+
+<script is:inline src="/cart.js"></script>
+

@@ -1,0 +1,267 @@
+---
+// Modal del carrito de compras
+---
+
+<div 
+	id="cart-modal" 
+	class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4"
+	aria-modal="true"
+	aria-labelledby="cart-modal-title"
+>
+	<div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+		<!-- Header -->
+		<div class="flex items-center justify-between p-6 border-b border-gray-200">
+			<h2 id="cart-modal-title" class="text-2xl font-bold text-primary">Carrito de Compras</h2>
+			<button 
+				id="close-cart-modal"
+				class="text-gray-500 hover:text-gray-700 transition-colors"
+				aria-label="Cerrar carrito"
+			>
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</button>
+		</div>
+
+		<!-- Contenido del carrito -->
+		<div id="cart-items" class="flex-1 overflow-y-auto p-6">
+			<!-- Los items se insertarán aquí dinámicamente -->
+		</div>
+
+		<!-- Footer con total y botón de compra -->
+		<div class="border-t border-gray-200 p-6 bg-gray-50">
+			<div class="flex justify-between items-center mb-4">
+				<span class="text-lg font-semibold text-gray-700">Total:</span>
+				<span id="cart-total" class="text-2xl font-bold text-accent">US$ 0</span>
+			</div>
+			<button 
+				id="checkout-button"
+				class="w-full bg-accent text-white py-3 px-6 rounded-md font-semibold hover:bg-accent-hover transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+				disabled
+			>
+				Finalizar Compra en WhatsApp
+			</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	// Datos de productos disponibles
+	const PRODUCTS = {
+		's900': {
+			name: 'Extensor Dual Screen S900',
+			price: 799,
+			url: '/extensor-2-monitores-s900'
+		},
+		's788': {
+			name: 'Extensor Triple Screen S788',
+			price: 999,
+			url: '/extensor-3-monitores'
+		}
+	};
+
+	// Funciones de cookies
+	function getCart() {
+		const cartCookie = document.cookie
+			.split('; ')
+			.find(row => row.startsWith('cart='));
+		
+		if (!cartCookie) return [];
+		
+		try {
+			const cartData = decodeURIComponent(cartCookie.split('=')[1]);
+			return JSON.parse(cartData);
+		} catch {
+			return [];
+		}
+	}
+
+	function saveCart(cart) {
+		const cartData = JSON.stringify(cart);
+		const expires = new Date();
+		expires.setTime(expires.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 días
+		document.cookie = `cart=${encodeURIComponent(cartData)}; expires=${expires.toUTCString()}; path=/`;
+		
+		// Disparar evento para actualizar contadores
+		document.dispatchEvent(new CustomEvent('cartUpdated'));
+		window.dispatchEvent(new Event('storage'));
+	}
+
+	// Función para renderizar items del carrito
+	function renderCartItems() {
+		const cart = getCart();
+		const cartItems = document.getElementById('cart-items');
+		const checkoutButton = document.getElementById('checkout-button');
+		const cartTotal = document.getElementById('cart-total');
+		
+		if (!cartItems || !checkoutButton || !cartTotal) return;
+
+		if (cart.length === 0) {
+			cartItems.innerHTML = `
+				<div class="text-center py-12">
+					<svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+					</svg>
+					<p class="text-gray-500 text-lg">Tu carrito está vacío</p>
+					<a href="/" class="inline-block mt-4 text-accent hover:underline">Seguir comprando</a>
+				</div>
+			`;
+			checkoutButton.disabled = true;
+			cartTotal.textContent = 'US$ 0';
+			return;
+		}
+
+		let total = 0;
+		cartItems.innerHTML = cart.map((item, index) => {
+			const product = PRODUCTS[item.id];
+			if (!product) return '';
+			
+			const itemTotal = product.price * (item.quantity || 1);
+			total += itemTotal;
+			
+			return `
+				<div class="flex items-center gap-4 p-4 border-b border-gray-200 last:border-b-0">
+					<div class="flex-1">
+						<h3 class="font-semibold text-primary">${product.name}</h3>
+						<p class="text-sm text-gray-600">Cantidad: ${item.quantity || 1}</p>
+						<p class="text-accent font-semibold mt-1">US$ ${itemTotal.toLocaleString()}</p>
+					</div>
+					<div class="flex items-center gap-2">
+						<button 
+							onclick="window.updateQuantity(${index}, -1)"
+							class="w-8 h-8 rounded-full border border-gray-300 hover:bg-gray-100 flex items-center justify-center transition-colors"
+							${item.quantity <= 1 ? 'disabled' : ''}
+						>
+							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+							</svg>
+						</button>
+						<span class="w-8 text-center font-semibold">${item.quantity || 1}</span>
+						<button 
+							onclick="window.updateQuantity(${index}, 1)"
+							class="w-8 h-8 rounded-full border border-gray-300 hover:bg-gray-100 flex items-center justify-center transition-colors"
+						>
+							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+							</svg>
+						</button>
+						<button 
+							onclick="window.removeFromCart(${index})"
+							class="ml-2 text-red-500 hover:text-red-700 transition-colors"
+							aria-label="Eliminar producto"
+						>
+							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			`;
+		}).join('');
+
+		cartTotal.textContent = `US$ ${total.toLocaleString()}`;
+		checkoutButton.disabled = false;
+	}
+
+	// Funciones globales para los botones
+	function updateQuantity(index: number, change: number) {
+		const cart = getCart();
+		if (cart[index]) {
+			cart[index].quantity = (cart[index].quantity || 1) + change;
+			if (cart[index].quantity <= 0) {
+				cart.splice(index, 1);
+			}
+			saveCart(cart);
+			renderCartItems();
+		}
+	}
+
+	function removeFromCart(index: number) {
+		const cart = getCart();
+		cart.splice(index, 1);
+		saveCart(cart);
+		renderCartItems();
+	}
+
+	(window as any).updateQuantity = updateQuantity;
+	(window as any).removeFromCart = removeFromCart;
+
+	// Función para abrir el modal
+	function openCartModal() {
+		const modal = document.getElementById('cart-modal');
+		if (modal) {
+			modal.classList.remove('hidden');
+			modal.classList.add('flex');
+			renderCartItems();
+			document.body.style.overflow = 'hidden';
+		}
+	}
+
+	// Función para cerrar el modal
+	function closeCartModal() {
+		const modal = document.getElementById('cart-modal');
+		if (modal) {
+			modal.classList.add('hidden');
+			modal.classList.remove('flex');
+			document.body.style.overflow = '';
+		}
+	}
+
+	// Event listeners
+	const closeButton = document.getElementById('close-cart-modal');
+	const checkoutButton = document.getElementById('checkout-button');
+	const modal = document.getElementById('cart-modal');
+
+	if (closeButton) {
+		closeButton.addEventListener('click', closeCartModal);
+	}
+
+	if (modal) {
+		modal.addEventListener('click', (e) => {
+			if (e.target === modal) {
+				closeCartModal();
+			}
+		});
+	}
+
+	if (checkoutButton) {
+		checkoutButton.addEventListener('click', () => {
+			const cart = getCart();
+			if (cart.length === 0) return;
+
+			let message = 'Hola, quiero comprar los siguientes productos:\n\n';
+			let total = 0;
+
+			cart.forEach((item) => {
+				const product = PRODUCTS[item.id as keyof typeof PRODUCTS];
+				if (product) {
+					const itemTotal = product.price * (item.quantity || 1);
+					total += itemTotal;
+					message += `• ${product.name} x${item.quantity || 1} - US$ ${itemTotal.toLocaleString()}\n`;
+				}
+			});
+
+			message += `\nTotal: US$ ${total.toLocaleString()}`;
+			
+			const whatsappUrl = `https://wa.me/51987951023?text=${encodeURIComponent(message)}`;
+			window.open(whatsappUrl, '_blank');
+			
+			// Opcional: limpiar el carrito después de la compra
+			// saveCart([]);
+		});
+	}
+
+	// Exponer función para abrir el modal desde otros componentes
+	(window as any).openCartModal = openCartModal;
+
+	// Actualizar cuando cambie el carrito
+	document.addEventListener('cartUpdated', renderCartItems);
+	window.addEventListener('storage', renderCartItems);
+</script>
+
+<style>
+	#cart-modal {
+		backdrop-filter: blur(4px);
+	}
+</style>
+
