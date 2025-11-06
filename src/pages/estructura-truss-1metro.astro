@@ -1,0 +1,589 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import CartIcon from '../components/CartIcon.astro';
+import CartModal from '../components/CartModal.astro';
+---
+
+<LandingLayout title="Estructura Truss de Aluminio 1 Metro - Perú Rocket Importaciones">
+	<!-- Navegación Sticky -->
+	<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex justify-between items-center h-20 md:h-24">
+				<a href="/" class="flex items-center h-full">
+					<img 
+						src="/logo_perurocket.png" 
+						alt="Perú Rocket Importaciones" 
+						class="h-14 md:h-20 w-auto object-contain"
+						loading="eager"
+					/>
+				</a>
+				<CartIcon />
+			</div>
+		</div>
+	</nav>
+
+	<!-- Hero con Producto y Compra -->
+	<section id="inicio" class="pt-28 md:pt-32 pb-12 bg-white">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+				<!-- Galería de Imágenes -->
+				<div class="md:sticky md:top-28">
+					<div class="mb-4 overflow-hidden rounded-lg relative aspect-[4/3]" id="main-image-container">
+						<video 
+							autoplay 
+							loop 
+							muted 
+							playsinline
+							class="w-full h-full object-cover rounded-lg shadow-lg transition-transform duration-500 cursor-zoom-in"
+							id="main-product-video"
+							poster="/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/image00007.png"
+						>
+							<source src="/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/Video de WhatsApp 2025-11-05 a las 12.39.19_262220cf.mp4" type="video/mp4" />
+						</video>
+						<img 
+							src="/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/image00007.png" 
+							alt="Estructura Truss de Aluminio 1 Metro" 
+							id="main-product-image"
+							class="w-full h-full object-cover rounded-lg shadow-lg transition-transform duration-500 cursor-zoom-in absolute top-0 left-0"
+							style="display: none;"
+							loading="eager"
+						/>
+					</div>
+					<div class="grid grid-cols-4 gap-2">
+						<div class="aspect-square relative rounded cursor-pointer border-2 border-accent hover:opacity-75 transition-all thumbnail-image thumbnail-video" data-index="0">
+							<video 
+								muted 
+								playsinline
+								class="w-full h-full object-cover rounded"
+								poster="/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/image00007.png"
+							>
+								<source src="/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/Video de WhatsApp 2025-11-05 a las 12.39.19_262220cf.mp4" type="video/mp4" />
+							</video>
+							<div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded">
+								<svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M8 5v14l11-7z"/>
+								</svg>
+							</div>
+						</div>
+						<img 
+							src="/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/image00007.png" 
+							alt="Vista 1" 
+							class="w-full aspect-square object-cover rounded cursor-pointer border-2 border-gray-200 hover:border-accent hover:opacity-75 transition-all thumbnail-image"
+							data-index="1"
+							loading="lazy"
+						/>
+						<img 
+							src="/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/image00024.png" 
+							alt="Vista 2" 
+							class="w-full aspect-square object-cover rounded cursor-pointer border-2 border-gray-200 hover:border-accent hover:opacity-75 transition-all thumbnail-image"
+							data-index="2"
+							loading="lazy"
+						/>
+						<img 
+							src="/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/image00026.png" 
+							alt="Vista 3" 
+							class="w-full aspect-square object-cover rounded cursor-pointer border-2 border-gray-200 hover:border-accent hover:opacity-75 transition-all thumbnail-image"
+							data-index="3"
+							loading="lazy"
+						/>
+					</div>
+				</div>
+
+				<!-- Información del Producto y Compra -->
+				<div>
+					<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+						Estructura Truss de Aluminio 1 Metro
+					</h1>
+
+					<!-- Valoraciones -->
+					<div class="flex items-center gap-3 mb-4">
+						<div class="flex items-center gap-0.5">
+							<svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
+								<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+							</svg>
+							<svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
+								<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+							</svg>
+							<svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
+								<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+							</svg>
+							<svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
+								<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+							</svg>
+							<svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
+								<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+							</svg>
+						</div>
+						<div class="flex flex-col">
+							<span class="text-sm font-semibold text-primary">4.9 / 5</span>
+							<span class="text-xs text-gray-500">62 reseñas</span>
+						</div>
+					</div>
+
+					<p class="text-lg text-secondary mb-6">
+						Dale solidez y profesionalismo a tus montajes con nuestra estructura truss de aluminio 4 mm, diseñada para resistir y durar.
+					</p>
+
+					<!-- Precio -->
+					<div class="mb-6">
+						<p class="text-sm text-gray-500 mb-1">Precio habitual <span class="line-through">US$ 250</span></p>
+						<p class="text-4xl md:text-5xl font-bold text-accent mb-2">US$ 200</p>
+						<p class="text-sm text-gray-600">Ahorra US$ 50</p>
+					</div>
+
+					<!-- Stock -->
+					<div class="mb-6 p-3 bg-red-50 border border-red-200 rounded-md">
+						<p class="text-sm font-medium text-red-600">
+							🔥 Solo unidades en inventario - Alta demanda
+						</p>
+					</div>
+
+					<!-- CTA Principal -->
+					<div class="flex gap-4 mb-6">
+						<button onclick="addToCart('truss-1metro'); openCartModal();" class="flex-1 bg-accent text-white text-lg font-medium px-8 py-4 rounded-md hover:bg-accent-hover transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
+							Agregar al carrito
+						</button>
+						<a href="https://wa.me/51987951023?text=Hola,%20quiero%20comprar%20la%20Estructura%20Truss%20de%20Aluminio%201%20Metro" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 text-primary text-lg font-medium px-8 py-4 rounded-md hover:bg-gray-300 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
+							Comprar ahora
+						</a>
+					</div>
+
+					<!-- Beneficios rápidos -->
+					<div class="space-y-3 mb-6">
+						<div class="flex items-center gap-2 text-sm text-gray-600">
+							<svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+							</svg>
+							<span>Envío gratuito en Lima</span>
+						</div>
+						<div class="flex items-center gap-2 text-sm text-gray-600">
+							<svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+							</svg>
+							<span>Garantía 30 días</span>
+						</div>
+						<div class="flex items-center gap-2 text-sm text-gray-600">
+							<svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+							<span>Montaje rápido y seguro</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Características Principales -->
+	<section class="py-12 bg-gray-50">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">
+				💪 ESTRUCTURA TRUSS DE ALUMINIO REFORZADO 💡
+			</h2>
+			<p class="text-center text-gray-600 mb-8">
+				Diseñada para resistir y durar. <strong>Alta resistencia y bajo peso</strong>, perfecta para montajes rápidos y seguros.
+			</p>
+			
+			<div class="grid md:grid-cols-2 gap-6 mb-8">
+				<div class="bg-white p-6 rounded-lg shadow-sm">
+					<h3 class="text-xl font-semibold text-primary mb-3">Alta Resistencia</h3>
+					<p class="text-gray-600">
+						Material de <strong>aluminio de alta densidad con refuerzo interno</strong>, diseñado para soportar cargas pesadas y uso intensivo en eventos profesionales.
+					</p>
+				</div>
+				
+				<div class="bg-white p-6 rounded-lg shadow-sm">
+					<h3 class="text-xl font-semibold text-primary mb-3">Versatilidad Total</h3>
+					<p class="text-gray-600">
+						Ideal para eventos, escenarios, estructuras publicitarias, soportes de iluminación, pantallas LED y más aplicaciones profesionales.
+					</p>
+				</div>
+			</div>
+
+			<div class="bg-white p-6 rounded-lg mb-6 shadow-sm">
+				<h3 class="text-xl font-semibold text-primary mb-4">Compatibilidad y Usos</h3>
+				<p class="text-gray-600 mb-4">
+					Perfecto para múltiples aplicaciones profesionales y comerciales.
+				</p>
+				<ul class="space-y-2 text-gray-700">
+					<li class="flex items-start gap-2">
+						<svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>Eventos y espectáculos profesionales</span>
+					</li>
+					<li class="flex items-start gap-2">
+						<svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>Estructuras publicitarias y displays</span>
+					</li>
+					<li class="flex items-start gap-2">
+						<svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>Soportes de iluminación profesional</span>
+					</li>
+					<li class="flex items-start gap-2">
+						<svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span>Pantallas LED y sistemas audiovisuales</span>
+					</li>
+				</ul>
+			</div>
+
+			<div class="text-center">
+				<p class="text-xl font-semibold text-primary">
+					Transforma tus montajes con esta estructura profesional.<br />La calidad no tiene precio.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Características del Producto -->
+	<section class="py-12 bg-white border-t">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">
+				Características de la Estructura Truss 1 Metro
+			</h2>
+			<div class="bg-gray-50 rounded-lg p-6 md:p-8">
+				<ul class="space-y-4 text-gray-700">
+					<li class="flex items-start gap-3">
+						<svg class="w-6 h-6 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span class="text-base"><strong>Medidas:</strong> 30 cm × 30 cm × 1 m</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="w-6 h-6 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span class="text-base"><strong>Material:</strong> Aluminio de alta densidad con refuerzo interno</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="w-6 h-6 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span class="text-base"><strong>Espesor:</strong> 4 mm de grosor para máxima resistencia</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="w-6 h-6 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span class="text-base"><strong>Acabado:</strong> Profesional, ideal para eventos y escenarios</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="w-6 h-6 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span class="text-base"><strong>Resistencia:</strong> Alta resistencia y bajo peso</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="w-6 h-6 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span class="text-base"><strong>Montaje:</strong> Rápido y seguro, perfecto para montajes profesionales</span>
+					</li>
+					<li class="flex items-start gap-3">
+						<svg class="w-6 h-6 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+						</svg>
+						<span class="text-base"><strong>Aplicaciones:</strong> Eventos, escenarios, estructuras publicitarias, soportes de iluminación, pantallas LED</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- Videos Demostrativos -->
+	<section class="py-12 bg-gray-50">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">
+				Video demostrativo
+			</h2>
+			<div class="max-w-3xl mx-auto">
+				<div class="rounded-lg overflow-hidden shadow-xl">
+					<video 
+						controls 
+						class="w-full"
+						poster="/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/image00007.png"
+					>
+						<source src="/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/Video de WhatsApp 2025-11-05 a las 12.39.19_262220cf.mp4" type="video/mp4" />
+						Tu navegador no soporta la reproducción de videos.
+					</video>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección de Compra -->
+	<section id="comprar" class="py-12 bg-white border-t">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">
+				¿Listo para fortalecer tus montajes?
+			</h2>
+			
+			<div class="bg-gray-50 rounded-lg p-6 md:p-8 mb-8">
+				<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+					<div>
+						<p class="text-sm text-gray-500 mb-1">Precio habitual <span class="line-through">US$ 250</span></p>
+						<p class="text-4xl md:text-5xl font-bold text-accent mb-2">US$ 200</p>
+						<p class="text-sm text-gray-600">Ahorra US$ 50</p>
+					</div>
+					<div class="flex gap-4 flex-col sm:flex-row">
+						<button onclick="addToCart('truss-1metro'); openCartModal();" class="flex-1 bg-accent text-white text-lg font-medium px-10 py-4 rounded-md hover:bg-accent-hover transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
+							Agregar al carrito
+						</button>
+						<a href="https://wa.me/51987951023?text=Hola,%20quiero%20comprar%20la%20Estructura%20Truss%20de%20Aluminio%201%20Metro" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 text-primary text-lg font-medium px-10 py-4 rounded-md hover:bg-gray-300 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
+							Comprar ahora
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Banda de urgencia -->
+			<div class="bg-[#ff4d4d] text-white px-6 py-4 rounded-md text-center mb-8 animate-pulse">
+				<p class="text-base font-medium">
+					Oferta especial: solo unidades en inventario
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección de Confianza -->
+	<section class="py-12 bg-gray-50">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-2xl font-bold text-primary mb-6 text-center">
+				¿SI COMPRO, ME LLEGARÁ MI PEDIDO? 😅
+			</h2>
+			<div class="bg-white p-6 md:p-8 rounded-lg shadow-sm">
+				<p class="text-gray-700 mb-4 leading-relaxed">
+					Soy de <strong>Perú Rocket Importaciones</strong>, este es nuestro emprendimiento. Trabajamos directamente con fabricantes certificados para garantizar la calidad de cada producto.
+				</p>
+				<div class="space-y-3">
+					<div>
+						<h3 class="font-semibold text-primary mb-2">DELIVERY A TODO EL PERÚ🇵🇪</h3>
+						<p class="text-gray-700">
+							🛵 <strong>Envíos a Lima:</strong> Menos de 24 horas (Preguntar cobertura)
+						</p>
+						<p class="text-gray-700">
+							🚚 <strong>Envíos provincias:</strong> 2 a 3 días por Olva Courier y Shalom
+						</p>
+					</div>
+					<div>
+						<h3 class="font-semibold text-primary mb-2">¡Haz tu Pedido! Delivery gratis en Lima (sujeto a cobertura) 🛵🛵</h3>
+						<ul class="list-disc list-inside space-y-1 text-gray-700">
+							<li><strong>Envíos urgentes:</strong> Se puede enviar por aplicativo el mismo día previa coordinación, el almacén está en Surquillo.</li>
+							<li><strong>Envíos gratis:</strong> 1 a 2 días de entrega solo para Lima (sujeto a cobertura). Caso contrario habrá un costo de envío por Olva Courier.</li>
+							<li><strong>Envíos para provincia:</strong> Los pagos por adelantado, los envíos pueden ser por Olva o Shalom.</li>
+							<li><strong>Garantía:</strong> Si no estás satisfecho con el producto, te devolvemos tu dinero.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Botón Flotante de Compra -->
+	<button 
+		onclick="addToCart('truss-1metro'); openCartModal();"
+		id="floating-buy-button"
+		class="fixed bottom-6 left-6 z-40 bg-accent text-white px-6 py-4 rounded-full shadow-2xl hover:bg-accent-hover transition-all duration-300 hover:scale-105 flex items-center gap-3 group opacity-0 pointer-events-none translate-y-4"
+		aria-label="Agregar al carrito"
+	>
+		<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+		</svg>
+		<span class="text-base font-semibold whitespace-nowrap">Agregar al carrito</span>
+	</button>
+
+	<!-- Modal del Carrito -->
+	<CartModal />
+
+	<!-- Botón Flotante WhatsApp -->
+	<a 
+		href="https://wa.me/51987951023?text=Hola,%20tengo%20una%20consulta%20sobre%20los%20productos" 
+		target="_blank" 
+		rel="noopener noreferrer"
+		class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#20BA5A] transition-all duration-300 hover:scale-110 flex items-center gap-3 group"
+		aria-label="Contactar por WhatsApp"
+	>
+		<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+			<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+		</svg>
+		<span class="hidden md:block text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+			Escribir por WhatsApp
+		</span>
+	</a>
+
+	<!-- Footer -->
+	<footer class="py-12 bg-white border-t border-gray-200">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid md:grid-cols-3 gap-8 mb-8">
+				<div>
+					<img 
+						src="/logo_perurocket.png" 
+						alt="Perú Rocket Importaciones" 
+						class="h-16 w-auto mb-4"
+						loading="lazy"
+					/>
+					<p class="text-sm text-gray-500">
+						Especialistas en importación de tecnología de vanguardia para mejorar tu productividad.
+					</p>
+				</div>
+				<div>
+					<h3 class="font-semibold text-primary mb-4">Enlaces</h3>
+					<nav class="space-y-2">
+						<a href="/" class="block text-sm text-gray-600 hover:text-accent transition-colors">Inicio</a>
+						<a href="/extensor-2-monitores-s900" class="block text-sm text-gray-600 hover:text-accent transition-colors">Extensor Dual S900</a>
+						<a href="/extensor-3-monitores" class="block text-sm text-gray-600 hover:text-accent transition-colors">Extensor Triple S788</a>
+					</nav>
+				</div>
+				<div>
+					<h3 class="font-semibold text-primary mb-4">Contacto</h3>
+					<p class="text-sm text-gray-600 mb-2">Email: <a href="mailto:contacto@perurocket.com" class="text-accent hover:underline">contacto@perurocket.com</a></p>
+					<p class="text-sm text-gray-600">Teléfono: <a href="tel:+51999999999" class="text-accent hover:underline">+51 999 999 999</a></p>
+				</div>
+			</div>
+			<div class="text-center text-xs text-gray-400 pt-4 border-t border-gray-200">
+				<p>© 2025 Perú Rocket Importaciones – Todos los derechos reservados</p>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			// Array de imágenes (índice 0 es el video)
+			const productImages = [
+				null, // Video en índice 0
+				'/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/image00007.png',
+				'/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/image00024.png',
+				'/ESTRUCTURAS ALUMINIO/ESTRUCTURAS ALUMINIO/1 METRO/image00026.png'
+			];
+
+			let currentImageIndex = 0;
+			const mainVideo = document.getElementById('main-product-video') as HTMLVideoElement | null;
+			const mainImageFallback = document.getElementById('main-product-image') as HTMLImageElement | null;
+			const thumbnails = document.querySelectorAll('.thumbnail-image');
+			const mainImageContainer = document.getElementById('main-image-container');
+
+			// Función para cambiar imagen
+			function changeImage(index: number) {
+				currentImageIndex = index;
+				
+				if (index === 0) {
+					// Mostrar video
+					if (mainVideo) {
+						mainVideo.style.display = 'block';
+						mainVideo.play();
+					}
+					if (mainImageFallback) {
+						mainImageFallback.style.display = 'none';
+					}
+				} else {
+					// Mostrar imagen
+					if (mainVideo) {
+						mainVideo.style.display = 'none';
+						mainVideo.pause();
+					}
+					if (mainImageFallback && productImages[index]) {
+						mainImageFallback.src = productImages[index];
+						mainImageFallback.style.display = 'block';
+					}
+				}
+				
+				// Actualizar bordes de thumbnails
+				thumbnails.forEach((thumb, i) => {
+					if (i === index) {
+						thumb.classList.remove('border-gray-200');
+						thumb.classList.add('border-accent');
+					} else {
+						thumb.classList.remove('border-accent');
+						thumb.classList.add('border-gray-200');
+					}
+				});
+			}
+
+			// Click en thumbnails
+			thumbnails.forEach((thumb, index) => {
+				thumb.addEventListener('click', () => {
+					changeImage(index);
+				});
+			});
+
+			// Zoom en hover
+			if (mainVideo) {
+				mainVideo.addEventListener('mouseenter', () => {
+					mainVideo.style.transform = 'scale(1.1)';
+				});
+				mainVideo.addEventListener('mouseleave', () => {
+					mainVideo.style.transform = 'scale(1)';
+				});
+			}
+			if (mainImageFallback) {
+				mainImageFallback.addEventListener('mouseenter', () => {
+					mainImageFallback.style.transform = 'scale(1.1)';
+				});
+				mainImageFallback.addEventListener('mouseleave', () => {
+					mainImageFallback.style.transform = 'scale(1)';
+				});
+			}
+
+			// Controlar visibilidad del botón flotante de compra
+			const floatingBuyButton = document.getElementById('floating-buy-button');
+			const heroSection = document.getElementById('inicio');
+			
+			function handleScroll() {
+				if (!floatingBuyButton || !heroSection) return;
+				
+				const heroBottom = heroSection.getBoundingClientRect().bottom;
+				const shouldShow = heroBottom < 100;
+				
+				if (shouldShow) {
+					floatingBuyButton.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+					floatingBuyButton.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+				} else {
+					floatingBuyButton.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+					floatingBuyButton.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+				}
+			}
+			
+			window.addEventListener('scroll', handleScroll);
+			handleScroll();
+		});
+	</script>
+
+	<script is:inline src="/cart.js"></script>
+
+	<style>
+		#main-image-container {
+			overflow: hidden;
+			position: relative;
+		}
+		
+		#main-product-video,
+		#main-product-image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+		
+		.thumbnail-image {
+			min-height: 0;
+			aspect-ratio: 1;
+		}
+		
+		.thumbnail-image:hover {
+			transform: scale(1.05);
+		}
+		
+		.thumbnail-video video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	</style>
+</LandingLayout>
+

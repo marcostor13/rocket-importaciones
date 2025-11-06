@@ -11,6 +11,26 @@ const PRODUCTS = {
 		name: 'Extensor Triple Screen S788',
 		price: 999,
 		url: '/extensor-3-monitores'
+	},
+	'truss-cubo': {
+		name: 'Cubo Estructura Truss de Aluminio',
+		price: 150,
+		url: '/estructura-truss-cubo'
+	},
+	'truss-1metro': {
+		name: 'Estructura Truss de Aluminio 1 Metro',
+		price: 200,
+		url: '/estructura-truss-1metro'
+	},
+	'truss-2metros': {
+		name: 'Estructura Truss de Aluminio 2 Metros',
+		price: 350,
+		url: '/estructura-truss-2metros'
+	},
+	'truss-3metros': {
+		name: 'Estructura Truss de Aluminio 3 Metros',
+		price: 500,
+		url: '/estructura-truss-3metros'
 	}
 };
 
