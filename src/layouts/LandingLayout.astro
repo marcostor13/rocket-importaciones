@@ -19,20 +19,30 @@ const { title = 'Triple/Quad Screen Laptop Monitor Extender | Rocket Import' } =
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 	</head>
-	<body class="font-sans antialiased scroll-smooth">
+	<body class="font-sans antialiased scroll-smooth overflow-x-hidden">
 		<slot />
 	</body>
 </html>
 
 <style is:global>
+	* {
+		box-sizing: border-box;
+	}
+
 	html {
 		scroll-behavior: smooth;
+		overflow-x: hidden;
+		max-width: 100vw;
 	}
 
 	body {
 		margin: 0;
+		padding: 0;
 		width: 100%;
+		max-width: 100vw;
 		min-height: 100vh;
+		overflow-x: hidden;
+		position: relative;
 	}
 </style>
 

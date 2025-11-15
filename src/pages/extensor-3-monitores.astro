@@ -13,8 +13,9 @@ import CartModal from '../components/CartModal.astro';
 					<img 
 						src="/logo_perurocket.png" 
 						alt="Perú Rocket Importaciones" 
-						class="h-14 md:h-20 w-auto object-contain"
+						class="h-14 md:h-20 object-contain"
 						loading="eager"
+						width="200"
 					/>
 				</a>
 				<CartIcon />
@@ -23,12 +24,38 @@ import CartModal from '../components/CartModal.astro';
 	</nav>
 
 	<!-- Hero con Producto y Compra -->
-	<section id="inicio" class="pt-28 md:pt-32 pb-12 bg-white">
-		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+	<section id="inicio" class="pt-28 md:pt-32 pb-12 bg-white w-full overflow-hidden">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+			<div class="mb-6 md:hidden text-center">
+				<h1 class="text-3xl font-bold text-primary mb-3">
+					Extensor Triple Screen S788
+				</h1>
+				<div class="flex flex-wrap items-center justify-center gap-2 text-sm">
+					<div class="flex items-center gap-0.5">
+						<svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
+							<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+						</svg>
+						<svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
+							<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+						</svg>
+						<svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
+							<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+						</svg>
+						<svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
+							<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+						</svg>
+						<svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
+							<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+						</svg>
+					</div>
+					<span class="text-base font-semibold text-primary whitespace-nowrap">4.8 / 5</span>
+					<span class="text-xs text-gray-500 whitespace-nowrap">89 reseñas</span>
+				</div>
+			</div>
 			<div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
 				<!-- Galería de Imágenes -->
 				<div class="md:sticky md:top-28">
-					<div class="mb-4 overflow-hidden rounded-lg" id="main-image-container">
+					<div class="mb-4 overflow-hidden rounded-lg relative" id="main-image-container">
 						<video 
 							autoplay 
 							loop 
@@ -37,85 +64,174 @@ import CartModal from '../components/CartModal.astro';
 							class="w-full rounded-lg shadow-lg transition-transform duration-500 cursor-zoom-in"
 							id="main-product-video"
 							poster="/S788/S788 details/S788 详情页 (1).jpg"
-							loading="eager"
 						>
 							<source src="/S788/video1.mp4" type="video/mp4" />
-							<img 
-								src="/S788/S788 details/S788 详情页 (1).jpg" 
-								alt="Extensor Triple Screen S788" 
-								id="main-product-image"
-								class="w-full rounded-lg shadow-lg"
-							/>
 						</video>
-					</div>
-					<div class="grid grid-cols-4 md:grid-cols-6 gap-2">
 						<img 
 							src="/S788/S788 details/S788 详情页 (1).jpg" 
 							alt="Vista 1" 
-							class="w-full rounded cursor-pointer border-2 border-accent hover:opacity-75 transition-all thumbnail-image"
+							id="main-product-image"
+							class="w-full rounded-lg shadow-lg hidden transition-transform duration-500 cursor-zoom-in"
+							loading="lazy"
+							decoding="async"
+						/>
+					</div>
+					<!-- Contenedor de miniaturas rediseñado -->
+					<div class="miniaturas sm:w-auto">
+						<div class="flex gap-2 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent/40 sm:grid sm:grid-cols-6 sm:gap-2 sm:overflow-visible sm:snap-none" role="list">
+						<button
+							type="button"
+							class="thumbnail-media relative border-2 border-accent rounded overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent cursor-pointer flex-shrink-0 w-[4.5rem] h-20 sm:w-auto sm:h-auto snap-start"
+							data-thumbnail
+							data-media-type="video"
+							aria-label="Ver video del producto"
+						>
+							<video 
+								muted 
+								loop 
+								playsinline
+								preload="metadata"
+								class="w-full h-full object-cover"
+								aria-hidden="true"
+							>
+								<source src="/S788/video1.mp4" type="video/mp4" />
+							</video>
+							<span class="absolute inset-0 flex items-center justify-center bg-black/40 text-white text-xs font-semibold uppercase tracking-widest">
+								Video
+							</span>
+						</button>
+						<button 
+							type="button"
+							class="thumbnail-media border-2 border-gray-200 rounded overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent cursor-pointer flex-shrink-0 w-[4.5rem] h-20 sm:w-auto sm:h-auto snap-start"
+							data-thumbnail
+							data-media-type="image"
 							data-index="0"
-							loading="lazy"
-						/>
-						<img 
-							src="/S788/S788 details/S788 详情页 (2).jpg" 
-							alt="Vista 2" 
-							class="w-full rounded cursor-pointer border-2 border-gray-200 hover:border-accent hover:opacity-75 transition-all thumbnail-image"
+							aria-label="Vista 1"
+						>
+							<img 
+								src="/S788/S788 details/S788 详情页 (1).jpg" 
+								alt="Vista 1" 
+								class="w-full h-full object-cover"
+								loading="lazy"
+							/>
+						</button>
+						<button 
+							type="button"
+							class="thumbnail-media border-2 border-gray-200 rounded overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent cursor-pointer flex-shrink-0 w-[4.5rem] h-20 sm:w-auto sm:h-auto snap-start"
+							data-thumbnail
+							data-media-type="image"
 							data-index="1"
-							loading="lazy"
-						/>
-						<img 
-							src="/S788/S788 details/S788 详情页 (3).jpg" 
-							alt="Vista 3" 
-							class="w-full rounded cursor-pointer border-2 border-gray-200 hover:border-accent hover:opacity-75 transition-all thumbnail-image"
+							aria-label="Vista 2"
+						>
+							<img 
+								src="/S788/S788 details/S788 详情页 (2).jpg" 
+								alt="Vista 2" 
+								class="w-full h-full object-cover"
+								loading="lazy"
+							/>
+						</button>
+						<button 
+							type="button"
+							class="thumbnail-media border-2 border-gray-200 rounded overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent cursor-pointer flex-shrink-0 w-[4.5rem] h-20 sm:w-auto sm:h-auto snap-start"
+							data-thumbnail
+							data-media-type="image"
 							data-index="2"
-							loading="lazy"
-						/>
-						<img 
-							src="/S788/S788 details/S788 详情页 (4).jpg" 
-							alt="Vista 4" 
-							class="w-full rounded cursor-pointer border-2 border-gray-200 hover:border-accent hover:opacity-75 transition-all thumbnail-image"
+							aria-label="Vista 3"
+						>
+							<img 
+								src="/S788/S788 details/S788 详情页 (3).jpg" 
+								alt="Vista 3" 
+								class="w-full h-full object-cover"
+								loading="lazy"
+							/>
+						</button>
+						<button 
+							type="button"
+							class="thumbnail-media border-2 border-gray-200 rounded overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent cursor-pointer flex-shrink-0 w-[4.5rem] h-20 sm:w-auto sm:h-auto snap-start"
+							data-thumbnail
+							data-media-type="image"
 							data-index="3"
-							loading="lazy"
-						/>
-						<img 
-							src="/S788/S788 details/S788 详情页 (5).jpg" 
-							alt="Vista 5" 
-							class="w-full rounded cursor-pointer border-2 border-gray-200 hover:border-accent hover:opacity-75 transition-all thumbnail-image"
+							aria-label="Vista 4"
+						>
+							<img 
+								src="/S788/S788 details/S788 详情页 (4).jpg" 
+								alt="Vista 4" 
+								class="w-full h-full object-cover"
+								loading="lazy"
+							/>
+						</button>
+						<button 
+							type="button"
+							class="thumbnail-media border-2 border-gray-200 rounded overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent cursor-pointer flex-shrink-0 w-[4.5rem] h-20 sm:w-auto sm:h-auto snap-start"
+							data-thumbnail
+							data-media-type="image"
 							data-index="4"
-							loading="lazy"
-						/>
-						<img 
-							src="/S788/S788 details/S788 详情页 (6).jpg" 
-							alt="Vista 6" 
-							class="w-full rounded cursor-pointer border-2 border-gray-200 hover:border-accent hover:opacity-75 transition-all thumbnail-image"
+							aria-label="Vista 5"
+						>
+							<img 
+								src="/S788/S788 details/S788 详情页 (5).jpg" 
+								alt="Vista 5" 
+								class="w-full h-full object-cover"
+								loading="lazy"
+							/>
+						</button>
+						<button 
+							type="button"
+							class="thumbnail-media border-2 border-gray-200 rounded overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent cursor-pointer flex-shrink-0 w-[4.5rem] h-20 sm:w-auto sm:h-auto snap-start"
+							data-thumbnail
+							data-media-type="image"
 							data-index="5"
-							loading="lazy"
-						/>
-						<img 
-							src="/S788/S788 details/S788 详情页 (7).jpg" 
-							alt="Vista 7" 
-							class="w-full rounded cursor-pointer border-2 border-gray-200 hover:border-accent hover:opacity-75 transition-all thumbnail-image"
+							aria-label="Vista 6"
+						>
+							<img 
+								src="/S788/S788 details/S788 详情页 (6).jpg" 
+								alt="Vista 6" 
+								class="w-full h-full object-cover"
+								loading="lazy"
+							/>
+						</button>
+						<button 
+							type="button"
+							class="thumbnail-media border-2 border-gray-200 rounded overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent cursor-pointer flex-shrink-0 w-[4.5rem] h-20 sm:w-auto sm:h-auto snap-start"
+							data-thumbnail
+							data-media-type="image"
 							data-index="6"
-							loading="lazy"
-						/>
-						<img 
-							src="/S788/S788 details/S788 详情页 (8).jpg" 
-							alt="Vista 8" 
-							class="w-full rounded cursor-pointer border-2 border-gray-200 hover:border-accent hover:opacity-75 transition-all thumbnail-image"
+							aria-label="Vista 7"
+						>
+							<img 
+								src="/S788/S788 details/S788 详情页 (7).jpg" 
+								alt="Vista 7" 
+								class="w-full h-full object-cover"
+								loading="lazy"
+							/>
+						</button>
+						<button 
+							type="button"
+							class="thumbnail-media border-2 border-gray-200 rounded overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent cursor-pointer flex-shrink-0 w-[4.5rem] h-20 sm:w-auto sm:h-auto snap-start"
+							data-thumbnail
+							data-media-type="image"
 							data-index="7"
-							loading="lazy"
-						/>
+							aria-label="Vista 8"
+						>
+							<img 
+								src="/S788/S788 details/S788 详情页 (8).jpg" 
+								alt="Vista 8" 
+								class="w-full h-full object-cover"
+								loading="lazy"
+							/>
+						</button>
+					</div>
 					</div>
 				</div>
 
 				<!-- Información del Producto y Compra -->
 				<div>
-					<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+					<h1 class="hidden md:block text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
 						Extensor Triple Screen S788
 					</h1>
 
 					<!-- Valoraciones -->
-					<div class="flex items-center gap-3 mb-4">
+					<div class="hidden md:flex items-center gap-3 mb-4">
 						<div class="flex items-center gap-0.5">
 							<svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
 								<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
@@ -139,31 +255,22 @@ import CartModal from '../components/CartModal.astro';
 						</div>
 					</div>
 
-					<p class="text-lg text-secondary mb-6">
+					<p class="hidden md:block text-lg text-secondary mb-6">
 						Transforma tu laptop en una estación de trabajo de múltiples pantallas. Accede a 3 o 4 pantallas con un solo cable.
 					</p>
 
 					<!-- Precio -->
 					<div class="mb-6">
-						<p class="text-sm text-gray-500 mb-1">Precio habitual <span class="line-through">US$ 1,299</span></p>
-						<p class="text-4xl md:text-5xl font-bold text-accent mb-2">US$ 999</p>
-						<p class="text-sm text-gray-600">Ahorra US$ 300</p>
-					</div>
-
-					<!-- Stock -->
-					<div class="mb-6 p-3 bg-red-50 border border-red-200 rounded-md">
-						<p class="text-sm font-medium text-red-600">
-							🔥 Solo unidades en inventario - Alta demanda
-						</p>
+						<p class="text-sm text-gray-500 mb-1">Precio habitual <span class="line-through">S/ 4,936</span></p>
+						<p class="text-4xl md:text-5xl font-bold text-accent mb-2">S/ 3,796</p>
+						<p class="text-sm text-gray-600">Ahorra S/ 1,140</p>
 					</div>
 
 					<!-- CTA Principal -->
-					<div class="flex gap-4 mb-6">
-						<button onclick="addToCart('s788'); openCartModal();" class="flex-1 bg-accent text-white text-lg font-medium px-8 py-4 rounded-md hover:bg-accent-hover transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
-							Agregar al carrito
-						</button>
-						<a href="https://wa.me/51987951023?text=Hola,%20quiero%20comprar%20el%20Extensor%20Triple%20Screen%20S788" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 text-primary text-lg font-medium px-8 py-4 rounded-md hover:bg-gray-300 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
-							Comprar ahora
+					<div class="mb-6 w-full max-w-full">
+						<a href="https://wa.me/51987951023?text=Hola,%20quiero%20comprar%20el%20Extensor%20Triple%20Screen%20S788" target="_blank" rel="noopener noreferrer" class="cta-button inline-flex w-full max-w-full flex-col items-center justify-center gap-1 rounded-lg bg-[rgb(29,158,6)] px-4 sm:px-8 py-4 text-center text-sm sm:text-base font-semibold uppercase tracking-wide text-white shadow-lg shadow-[rgba(29,158,6,0.35)] transition-all duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[rgb(29,158,6)] animate-pulse">
+							<span class="text-center leading-tight">Comprar ahora</span>
+							<span class="text-xs sm:text-sm font-bold leading-tight">¡Últimas unidades en stock!</span>
 						</a>
 					</div>
 
@@ -193,19 +300,92 @@ import CartModal from '../components/CartModal.astro';
 		</div>
 	</section>
 
-	<!-- Galería Adicional de Imágenes -->
-	<section class="py-8 bg-gray-50">
-		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-				<img src="/S788/S788 details/S788 详情页 (9).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-sm hover:shadow-lg transition-shadow cursor-zoom-in" loading="lazy" />
-				<img src="/S788/S788 details/S788 详情页 (10).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-sm hover:shadow-lg transition-shadow cursor-zoom-in" loading="lazy" />
-				<img src="/S788/S788 details/S788 详情页 (11).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-sm hover:shadow-lg transition-shadow cursor-zoom-in" loading="lazy" />
-				<img src="/S788/S788 details/S788 详情页 (13).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-sm hover:shadow-lg transition-shadow cursor-zoom-in" loading="lazy" />
-				<img src="/S788/S788 details/S788 详情页 (14).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-sm hover:shadow-lg transition-shadow cursor-zoom-in" loading="lazy" />
-				<img src="/S788/S788 details/S788 详情页 (15).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-sm hover:shadow-lg transition-shadow cursor-zoom-in" loading="lazy" />
-				<img src="/S788/S788 details/S788 详情页 (16).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-sm hover:shadow-lg transition-shadow cursor-zoom-in" loading="lazy" />
-				<img src="/S788/S788 details/S788 详情页 (17).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-sm hover:shadow-lg transition-shadow cursor-zoom-in" loading="lazy" />
-				<img src="/S788/S788 details/S788 详情页 (18).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-sm hover:shadow-lg transition-shadow cursor-zoom-in" loading="lazy" />
+	<!-- Galería Visual con Títulos -->
+	<section class="py-0 bg-white w-full overflow-hidden">
+		<!-- Video 1: Diseño sin título -->
+		<div class="w-full bg-gray-50 py-12">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">
+					Unboxing - Extensor Triple Screen S788
+				</h2>
+				<div class="w-full rounded-lg overflow-hidden shadow-2xl">
+					<video 
+						controls 
+						class="w-full"
+						poster="/S788/S788 details/S788 详情页 (1).jpg"
+					>
+						<source src="/Materiales PUB/Diseño sin título.mp4" type="video/mp4" />
+						Tu navegador no soporta la reproducción de videos.
+					</video>
+				</div>
+			</div>
+		</div>
+
+		<!-- Imagen 1: Diseño Compacto -->
+		<div class="w-full bg-white py-12">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">
+					Diseño Compacto y Profesional
+				</h2>
+				<div class="w-full rounded-lg overflow-hidden shadow-2xl">
+					<img 
+						src="/S788/S788 details/S788 详情页 (2).jpg" 
+						alt="Diseño compacto del Extensor Triple Screen" 
+						class="w-full h-auto object-cover"
+						loading="lazy"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<!-- Imagen 2: Máxima Portabilidad -->
+		<div class="w-full bg-gray-50 py-12">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">
+					Máxima Portabilidad
+				</h2>
+				<div class="w-full rounded-lg overflow-hidden shadow-2xl">
+					<img 
+						src="/S788/S788 details/S788 详情页 (16).jpg" 
+						alt="Portabilidad del Extensor Triple Screen" 
+						class="w-full h-auto object-cover"
+						loading="lazy"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<!-- Imagen 3: Configuración Múltiple -->
+		<div class="w-full bg-white py-12">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">
+					Configuración de Pantallas Múltiples
+				</h2>
+				<div class="w-full rounded-lg overflow-hidden shadow-2xl">
+					<img 
+						src="/S788/S788 details/S788 详情页 (17).jpg" 
+						alt="Configuración múltiple del Extensor Triple Screen" 
+						class="w-full h-auto object-cover"
+						loading="lazy"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<!-- Galería de Detalles Adicionales -->
+		<div class="w-full bg-white py-12">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h2 class="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">
+					Detalles del Producto
+				</h2>
+				<div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
+					<img src="/S788/S788 details/S788 详情页 (9).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" loading="lazy" />
+					<img src="/S788/S788 details/S788 详情页 (10).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" loading="lazy" />
+					<img src="/S788/S788 details/S788 详情页 (11).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" loading="lazy" />
+					<img src="/S788/S788 details/S788 详情页 (13).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" loading="lazy" />
+					<img src="/S788/S788 details/S788 详情页 (14).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" loading="lazy" />
+					<img src="/S788/S788 details/S788 详情页 (15).jpg" alt="Detalle S788" class="w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" loading="lazy" />
+				</div>
 			</div>
 		</div>
 	</section>
@@ -408,28 +588,17 @@ import CartModal from '../components/CartModal.astro';
 			</h2>
 			
 			<div class="bg-gray-50 rounded-lg p-6 md:p-8 mb-8">
-				<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+				<div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 					<div>
-						<p class="text-sm text-gray-500 mb-1">Precio habitual <span class="line-through">US$ 1,299</span></p>
-						<p class="text-4xl md:text-5xl font-bold text-accent mb-2">US$ 999</p>
-						<p class="text-sm text-gray-600">Ahorra US$ 300</p>
-								</div>
-					<div class="flex gap-4 flex-col sm:flex-row">
-						<button onclick="addToCart('s788'); openCartModal();" class="flex-1 bg-accent text-white text-lg font-medium px-10 py-4 rounded-md hover:bg-accent-hover transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
-							Agregar al carrito
-						</button>
-						<a href="https://wa.me/51987951023?text=Hola,%20quiero%20comprar%20el%20Extensor%20Triple%20Screen%20S788" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 text-primary text-lg font-medium px-10 py-4 rounded-md hover:bg-gray-300 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center">
-							Comprar ahora
-						</a>
-								</div>
-							</div>
-						</div>
-						
-			<!-- Banda de urgencia -->
-			<div class="bg-[#ff4d4d] text-white px-6 py-4 rounded-md text-center mb-8 animate-pulse">
-				<p class="text-base font-medium">
-					Sólo 50 unidades disponibles para el lanzamiento — haz tu pedido hoy
-				</p>
+						<p class="text-sm text-gray-500 mb-1">Precio habitual <span class="line-through">S/ 4,936</span></p>
+						<p class="text-4xl md:text-5xl font-bold text-accent mb-2">S/ 3,796</p>
+						<p class="text-sm text-gray-600">Ahorra S/ 1,140</p>
+					</div>
+					<a href="https://wa.me/51987951023?text=Hola,%20quiero%20comprar%20el%20Extensor%20Triple%20Screen%20S788" target="_blank" rel="noopener noreferrer" class="inline-flex w-full max-w-full flex-col items-center justify-center gap-1 rounded-lg bg-[rgb(29,158,6)] px-4 sm:px-8 py-4 text-center text-sm sm:text-base font-semibold uppercase tracking-wide text-white shadow-lg shadow-[rgba(29,158,6,0.35)] transition-all duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[rgb(29,158,6)] animate-pulse md:w-auto">
+						<span class="text-center leading-tight">Comprar ahora</span>
+						<span class="text-xs sm:text-sm font-bold leading-tight">¡Últimas unidades en stock!</span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -562,28 +731,32 @@ import CartModal from '../components/CartModal.astro';
 		</div>
 	</section>
 
-	<!-- Botón Flotante de Compra -->
-	<button 
-		onclick="addToCart('s788'); openCartModal();"
-		id="floating-buy-button"
-		class="fixed bottom-6 left-6 z-40 bg-accent text-white px-6 py-4 rounded-full shadow-2xl hover:bg-accent-hover transition-all duration-300 hover:scale-105 flex items-center gap-3 group opacity-0 pointer-events-none translate-y-4"
-		aria-label="Agregar al carrito"
-	>
-		<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-		</svg>
-		<span class="text-base font-semibold whitespace-nowrap">Agregar al carrito</span>
-	</button>
 
 	<!-- Modal del Carrito -->
 	<CartModal />
+
+	<!-- Botón Flotante de Compra -->
+	<div id="floating-cta" class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t-2 border-gray-200 shadow-2xl transition-all duration-300 translate-y-full px-4 py-3">
+		<div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+			<div class="flex-1">
+				<p class="text-lg md:text-2xl font-bold text-accent">S/ 3,796</p>
+				<p class="text-xs text-gray-500">Ahorra S/ 1,140</p>
+			</div>
+			<a href="https://wa.me/51987951023?text=Hola,%20quiero%20comprar%20el%20Extensor%20Triple%20Screen%20S788" target="_blank" rel="noopener noreferrer" class="inline-flex flex-col items-center justify-center gap-1 rounded-lg bg-[rgb(29,158,6)] px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-white shadow-lg shadow-[rgba(29,158,6,0.35)] transition-all duration-300 hover:scale-105 animate-pulse flex-shrink-0">
+				<span class="leading-tight">Comprar ahora</span>
+				<span class="text-xs font-bold leading-tight">¡Últimas unidades!</span>
+			</a>
+		</div>
+	</div>
 
 	<!-- Botón Flotante WhatsApp -->
 	<a 
 		href="https://wa.me/51987951023?text=Hola,%20tengo%20una%20consulta%20sobre%20los%20productos" 
 		target="_blank" 
 		rel="noopener noreferrer"
-		class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#20BA5A] transition-all duration-300 hover:scale-110 flex items-center gap-3 group"
+		id="whatsapp-button"
+		class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#20BA5A] hover:scale-110 flex items-center gap-3 group"
+		style="transition: all 0.3s ease;"
 		aria-label="Contactar por WhatsApp"
 	>
 		<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -629,8 +802,7 @@ import CartModal from '../components/CartModal.astro';
 	</footer>
 
 	<script>
-		// Array de imágenes
-		const productImages = [
+		const productImages: string[] = [
 			'/S788/S788 details/S788 详情页 (1).jpg',
 			'/S788/S788 details/S788 详情页 (2).jpg',
 			'/S788/S788 details/S788 详情页 (3).jpg',
@@ -641,133 +813,225 @@ import CartModal from '../components/CartModal.astro';
 			'/S788/S788 details/S788 详情页 (8).jpg'
 		];
 
-		let currentImageIndex = 0;
-		const mainImage = document.getElementById('main-product-image');
-		const thumbnails = document.querySelectorAll('.thumbnail-image');
-		let autoSlideInterval: ReturnType<typeof setInterval> | undefined;
+		const productImageAlts: string[] = [
+			'Vista 1',
+			'Vista 2',
+			'Vista 3',
+			'Vista 4',
+			'Vista 5',
+			'Vista 6',
+			'Vista 7',
+			'Vista 8'
+		];
 
-		// Función para cambiar imagen
-		function changeImage(index: number) {
-			currentImageIndex = index;
-			if (mainImage) {
-				mainImage.src = productImages[index];
-			}
-			
-			// Actualizar bordes de thumbnails
-			thumbnails.forEach((thumb, i) => {
-				if (i === index) {
-					thumb.classList.remove('border-gray-200');
-					thumb.classList.add('border-accent');
-				} else {
-					thumb.classList.remove('border-accent');
-					thumb.classList.add('border-gray-200');
-				}
+		let currentImageIndex = 0;
+		let autoSlideInterval: ReturnType<typeof setInterval> | undefined;
+		let isVideoActive = true;
+
+		const mainImage = document.getElementById('main-product-image') as HTMLImageElement | null;
+		const mainVideo = document.getElementById('main-product-video') as HTMLVideoElement | null;
+		const mainImageContainer = document.getElementById('main-image-container');
+		const thumbnailElements = document.querySelectorAll<HTMLElement>('[data-thumbnail]');
+		const videoThumbnail = document.querySelector<HTMLElement>('[data-media-type="video"]');
+
+		function setActiveThumbnail(target: HTMLElement | null) {
+			if (!target) return;
+			thumbnailElements.forEach((thumb) => {
+				thumb.classList.remove('border-accent', 'ring-2', 'ring-accent/30');
+				thumb.classList.add('border-gray-200');
 			});
+			target.classList.remove('border-gray-200');
+			target.classList.add('border-accent', 'ring-2', 'ring-accent/30');
 		}
 
-		// Click en thumbnails
-		thumbnails.forEach((thumb, index) => {
-			thumb.addEventListener('click', () => {
-				changeImage(index);
-				// Reiniciar autoplay
-				if (autoSlideInterval) {
-					clearInterval(autoSlideInterval);
-				}
-				autoSlideInterval = setInterval(() => {
-					currentImageIndex = (currentImageIndex + 1) % productImages.length;
-					changeImage(currentImageIndex);
-				}, 3000);
-			});
-		});
+		function triggerMediaSlide(element: HTMLElement | null) {
+			if (!element) return;
+			element.classList.remove('media-slide-enter');
+			void element.offsetWidth;
+			element.classList.add('media-slide-enter');
+		}
 
-		// Autoplay cada 3 segundos
+		function showVideo() {
+			if (!mainVideo || !mainImage) return;
+			isVideoActive = true;
+			mainVideo.classList.remove('hidden');
+			mainVideo.currentTime = 0;
+			void mainVideo.play();
+			mainImage.classList.add('hidden');
+			setActiveThumbnail(videoThumbnail);
+			triggerMediaSlide(mainVideo);
+		}
+
+		function showImage(index: number) {
+			if (!mainImage || !productImages[index]) return;
+			isVideoActive = false;
+			mainImage.src = productImages[index];
+			mainImage.alt = productImageAlts[index] || 'Vista del producto';
+			mainImage.classList.remove('hidden');
+			triggerMediaSlide(mainImage);
+
+			if (mainVideo) {
+				mainVideo.pause();
+				mainVideo.classList.add('hidden');
+			}
+
+			const imageThumbnail = document.querySelector<HTMLElement>(`[data-media-type="image"][data-index="${index}"]`);
+			if (imageThumbnail) {
+				setActiveThumbnail(imageThumbnail);
+			}
+		}
+
+		function stopAutoSlide() {
+			if (autoSlideInterval) {
+				clearInterval(autoSlideInterval);
+				autoSlideInterval = undefined;
+			}
+		}
+
 		function startAutoSlide() {
+			if (!productImages.length) {
+				return;
+			}
+			stopAutoSlide();
 			autoSlideInterval = setInterval(() => {
 				currentImageIndex = (currentImageIndex + 1) % productImages.length;
-				changeImage(currentImageIndex);
+				showImage(currentImageIndex);
 			}, 3000);
 		}
 
-		// Pausar autoplay al hacer hover sobre la imagen principal
-		const mainImageContainer = document.getElementById('main-image-container');
-		if (mainImageContainer) {
-			mainImageContainer.addEventListener('mouseenter', () => {
-				if (autoSlideInterval) {
-					clearInterval(autoSlideInterval);
-				}
-			});
-			mainImageContainer.addEventListener('mouseleave', startAutoSlide);
-		}
+		thumbnailElements.forEach((thumb) => {
+			const mediaType = thumb.dataset.mediaType;
+			if (mediaType === 'video') {
+				thumb.addEventListener('click', () => {
+					showVideo();
+					stopAutoSlide();
+				});
+				return;
+			}
 
-		// Zoom en hover
-		const mainVideo = document.getElementById('main-product-video');
-		const mainImageFallback = document.getElementById('main-product-image');
-		const container = document.getElementById('main-image-container');
-		
+			thumb.addEventListener('click', () => {
+				const index = Number(thumb.dataset.index ?? '0');
+				currentImageIndex = index;
+				showImage(index);
+				startAutoSlide();
+			});
+		});
+
 		if (mainVideo) {
 			mainVideo.addEventListener('mouseenter', () => {
-				mainVideo.style.transform = 'scale(1.1)';
+				mainVideo.style.transform = 'scale(1.05)';
 			});
 			mainVideo.addEventListener('mouseleave', () => {
 				mainVideo.style.transform = 'scale(1)';
 			});
-		} else if (mainImageFallback) {
-			mainImageFallback.addEventListener('mouseenter', () => {
-				mainImageFallback.style.transform = 'scale(1.1)';
+		}
+
+		if (mainImage) {
+			mainImage.addEventListener('mouseenter', () => {
+				mainImage.style.transform = 'scale(1.05)';
 			});
-			mainImageFallback.addEventListener('mouseleave', () => {
-				mainImageFallback.style.transform = 'scale(1)';
+			mainImage.addEventListener('mouseleave', () => {
+				mainImage.style.transform = 'scale(1)';
 			});
 		}
 
-		// Cambiar a imagen cuando se clickea un thumbnail
-		thumbnails.forEach((thumb, index) => {
-			thumb.addEventListener('click', () => {
-				if (mainVideo) {
-					mainVideo.style.display = 'none';
+		if (mainImageContainer) {
+			mainImageContainer.addEventListener('mouseenter', stopAutoSlide);
+			mainImageContainer.addEventListener('mouseleave', () => {
+				if (!isVideoActive) {
+					startAutoSlide();
 				}
-				if (mainImageFallback) {
-					mainImageFallback.style.display = 'block';
-				}
-				changeImage(index);
 			});
-		});
+		}
 
-		// Iniciar autoplay
-		startAutoSlide();
+	showVideo();
+	startAutoSlide();
 
-		// Controlar visibilidad del botón flotante de compra
-		const floatingBuyButton = document.getElementById('floating-buy-button');
-		const heroSection = document.getElementById('inicio');
-		
-		function handleScroll() {
-			if (!floatingBuyButton || !heroSection) return;
-			
-			const heroBottom = heroSection.getBoundingClientRect().bottom;
-			const shouldShow = heroBottom < 100; // Mostrar cuando la primera sección está casi fuera de vista
-			
-			if (shouldShow) {
-				floatingBuyButton.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-				floatingBuyButton.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-			} else {
-				floatingBuyButton.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-				floatingBuyButton.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+	// Control del botón flotante de compra
+	const floatingCTA = document.getElementById('floating-cta');
+	const heroSection = document.getElementById('inicio');
+	const whatsappButton = document.getElementById('whatsapp-button');
+	
+	if (floatingCTA && heroSection && whatsappButton) {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						// Hero está visible, ocultar botón flotante
+						floatingCTA.classList.add('translate-y-full');
+						// Restaurar posición normal del botón de WhatsApp
+						whatsappButton.style.bottom = '1.5rem'; // 24px (bottom-6)
+					} else {
+						// Hero no está visible, mostrar botón flotante
+						floatingCTA.classList.remove('translate-y-full');
+						// Subir el botón de WhatsApp para que no se superponga
+						whatsappButton.style.bottom = '6.5rem'; // 104px (más arriba del botón flotante)
+					}
+				});
+			},
+			{
+				threshold: 0.1,
+				rootMargin: '0px'
 			}
-		}
+		);
 		
-		window.addEventListener('scroll', handleScroll);
-		handleScroll(); // Verificar posición inicial
+		observer.observe(heroSection);
+	}
+
 	</script>
 
 	<script is:inline src="/cart.js"></script>
 
 	<style>
+		section {
+			max-width: 100vw;
+			overflow-x: hidden;
+		}
+
 		#main-image-container {
 			overflow: hidden;
 		}
 		
-		.thumbnail-image:hover {
-			transform: scale(1.05);
+		.thumbnail-media {
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+		}
+
+		.thumbnail-media:hover {
+			transform: scale(1.03);
+		}
+
+		.media-slide-enter {
+			animation: media-slide-in 0.45s ease forwards;
+		}
+
+		@keyframes media-slide-in {
+			0% {
+				opacity: 0;
+				transform: translateX(32px);
+			}
+			60% {
+				opacity: 1;
+				transform: translateX(-4px);
+			}
+			100% {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+
+		/* Prevenir overflow horizontal en todos los contenedores */
+		nav, section, footer {
+			width: 100%;
+			max-width: 100vw;
+			box-sizing: border-box;
+		}
+
+		img, video {
+			max-width: 100%;
+			height: auto;
+		}
+		.miniaturas{
+			max-width: 90vw;
 		}
 	</style>
 </LandingLayout>
