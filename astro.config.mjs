@@ -7,3 +7,5 @@ export default defineConfig({
   integrations: [tailwind()],
   output: "static",
 })
+
+
